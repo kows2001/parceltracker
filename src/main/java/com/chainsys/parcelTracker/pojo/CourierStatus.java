@@ -2,6 +2,7 @@ package com.chainsys.parcelTracker.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,41 +10,73 @@ import javax.persistence.Table;
 @Table(name = "COURIER_STATUS")
 public class CourierStatus {
 	@Id
-	private int reference_no;
-	private Date status_date;
-	private String current_place;
-	private Date check_in_time;
-	private Date check_out_time;
+	@Column(name = "reference_no")
+	private int courierReferenceNo;
 	
-	public int getReference_no() {
-		return reference_no;
+	@Column(name = "status_date")
+	private Date statusUpdateDate;
+	
+	@Column(name = "current_place")
+	private String currentPlace;
+	
+	@Column(name = "check_in_time")
+	private String checkInTime;
+	
+	@Column(name = "check_out_time")
+	private String checkOutTime;
+	
+	@Column(name = "status")
+	private String courierStatus;
+	
+	
+	
+	public int getCourierReferenceNo() {
+		return courierReferenceNo;
 	}
-	public void setReference_no(int reference_no) {
-		this.reference_no = reference_no;
+
+	public void setCourierReferenceNo(int courierReferenceNo) {
+		this.courierReferenceNo = courierReferenceNo;
 	}
-	public Date getStatus_date() {
-		return status_date;
+
+	public Date getStatusUpdateDate() {
+		return statusUpdateDate;
 	}
-	public void setStatus_date(Date status_date) {
-		this.status_date = status_date;
+
+	public void setStatusUpdateDate(Date statusUpdateDate) {
+		this.statusUpdateDate = statusUpdateDate;
 	}
-	public String getCurrent_place() {
-		return current_place;
+
+	public String getCurrentPlace() {
+		return currentPlace;
 	}
-	public void setCurrent_place(String current_place) {
-		this.current_place = current_place;
+
+	public void setCurrentPlace(String currentPlace) {
+		this.currentPlace = currentPlace;
 	}
-	public Date getCheck_in_time() {
-		return check_in_time;
+
+	public String getCheckInTime() {
+		return checkInTime;
 	}
-	public void setCheck_in_time(Date check_in_time) {
-		this.check_in_time = check_in_time;
+
+	public void setCheckInTime(String checkInTime) {
+		this.checkInTime = checkInTime;
 	}
-	public Date getCheck_out_time() {
-		return check_out_time;
+
+	public String getCheckOutTime() {
+		return checkOutTime;
 	}
-	public void setCheck_out_time(Date check_out_time) {
-		this.check_out_time = check_out_time;
+
+	public void setCheckOutTime(String checkOutTime) {
+		this.checkOutTime = checkOutTime;
 	}
+
+	public String getCourierStatus() {
+		return courierStatus;
+	}
+
+	public void setCourierStatus(String courierStatus) {
+		this.courierStatus = courierStatus;
+	}
+
 	
 }

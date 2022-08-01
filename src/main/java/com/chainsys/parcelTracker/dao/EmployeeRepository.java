@@ -9,21 +9,22 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.chainsys.parcelTracker.pojo.Customer;
+import com.chainsys.parcelTracker.pojo.Employee;
 
 @Repository
-public interface CustomerRepository  extends JpaRepository<Customer, Integer>{
+public interface EmployeeRepository  extends JpaRepository<Employee, Integer>{
 //	
-	@Query(value="select customer_id, name, phone_number, email from CUSTOMER_table where customer_id=?1", nativeQuery = true)
-	Customer findBySelectedId(int id);
 	
-	Customer findById(int id);
+	Employee findById(int id);
 
-	Customer save(Customer dr); 
+	Employee save(Employee dr); 
 
 	void deleteById(int id);
 
-	List<Customer> findAll();
+	List<Employee> findAll();
 	
+	@Query(value="select * from EMPLOYEE  ", nativeQuery = true)
+	Employee getAdminAccess();
 	
 }
 

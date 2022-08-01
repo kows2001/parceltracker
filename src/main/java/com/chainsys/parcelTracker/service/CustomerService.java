@@ -13,4 +13,13 @@ private CustomerRepository repo;
 public Customer insertCustomer(Customer cus) {
 	return repo.save(cus);
 }
+public Customer retriveDetails(int id) {
+	return repo.findById(id);
 }
+//public Customer retrivespecificdetails(int id) {
+//	return repo.findBySelectedId(id);
+//}
+}
+
+
+

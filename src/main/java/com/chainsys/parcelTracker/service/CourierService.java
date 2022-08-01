@@ -1,5 +1,7 @@
 package com.chainsys.parcelTracker.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +14,10 @@ public class CourierService {
 	
 	public Courier addCourierDetails(Courier courier) {
 		return repo.save(courier);
+	}
+	
+	public Iterable<Courier> getCourierDetails(){
+		Iterable<Courier> colist =  repo.findAll();
+		return colist;
 	}
 }

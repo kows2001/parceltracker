@@ -2,6 +2,7 @@ package com.chainsys.parcelTracker.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,62 +10,88 @@ import javax.persistence.Table;
 @Table(name = "EMPLOYEE")
 public class Employee {
 	@Id
-	private String employee_name;
-	private String gender;
-	private Date date_of_birth;
-	private String address;
-	private String email;
-	private String password;
-	private Date date_of_joining;
-	private String role;
+	@Column(name  = "employee_id")
+	private int employeeId;
 	
-	public String getEmployee_name() {
-		return employee_name;
+	@Column(name  = "employee_name")
+	private String employeeName;
+	
+	@Column(name  = "gender")
+	private String employeeGender;
+	
+	@Column(name  = "date_of_birth")
+	private Date dateOfBirth;
+	
+	@Column(name  = "address")
+	private String employeeAddress;
+	
+	@Column(name  = "email")
+	private String employeeEmail;
+	
+	@Column(name  = "password")
+	private String employeePassword;
+	
+	@Column(name  = "date_of_joining")
+	private Date empDateOfJoining;
+	
+	@Column(name  = "role")
+	private String employeeRole;
+	
+	public String getEmployeePassword() {
+		return employeePassword;
 	}
-	public void setEmployee_name(String employee_name) {
-		this.employee_name = employee_name;
+	public void setEmployeePassword(String employeePassword) {
+		this.employeePassword = employeePassword;
 	}
-	public String getGender() {
-		return gender;
+	public String getEmployeeRole() {
+		return employeeRole;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setEmployeeRole(String employeeRole) {
+		this.employeeRole = employeeRole;
 	}
-	public Date getDate_of_birth() {
-		return date_of_birth;
+	
+	
+	public int getEmployeeId() {
+		return employeeId;
 	}
-	public void setDate_of_birth(Date date_of_birth) {
-		this.date_of_birth = date_of_birth;
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
-	public String getAddress() {
-		return address;
+	public String getEmployeeName() {
+		return employeeName;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
-	public String getEmail() {
-		return email;
+	public String getEmployeeGender() {
+		return employeeGender;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmployeeGender(String employeeGender) {
+		this.employeeGender = employeeGender;
 	}
-	public String getPassword() {
-		return password;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
-	public Date getDate_of_joining() {
-		return date_of_joining;
+	public String getEmployeeAddress() {
+		return employeeAddress;
 	}
-	public void setDate_of_joining(Date date_of_joining) {
-		this.date_of_joining = date_of_joining;
+	public void setEmployeeAddress(String employeeAddress) {
+		this.employeeAddress = employeeAddress;
 	}
-	public String getRole() {
-		return role;
+	public String getEmployeeEmail() {
+		return employeeEmail;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+	}
+	public Date getEmpDateOfJoining() {
+		return empDateOfJoining;
+	}
+	public void setEmpDateOfJoining(Date empDateOfJoining) {
+		this.empDateOfJoining = empDateOfJoining;
 	}
 	
 }
