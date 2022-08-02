@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> welcome</h1>
-<h2 style='colour: green;'> Your Courier Was Registered Successfully</h2>
+ <a href="/courier/courierregister">Register Your Courier</a>
+<a href="/courierstatus/trackingpage">Track Your Courier</a>
 </body>
 </html>

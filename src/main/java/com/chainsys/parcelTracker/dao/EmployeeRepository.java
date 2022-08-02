@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.parcelTracker.pojo.Customer;
-import com.chainsys.parcelTracker.pojo.Employee;
+import com.chainsys.parcelTracker.model.Customer;
+import com.chainsys.parcelTracker.model.Employee;
 
 @Repository
 public interface EmployeeRepository  extends JpaRepository<Employee, Integer>{
@@ -23,7 +23,7 @@ public interface EmployeeRepository  extends JpaRepository<Employee, Integer>{
 
 	List<Employee> findAll();
 	
-	@Query(value="select * from EMPLOYEE  ", nativeQuery = true)
+	@Query(value="select * from EMPLOYEE ", nativeQuery = true)
 	Employee getAdminAccess();
 	
 }

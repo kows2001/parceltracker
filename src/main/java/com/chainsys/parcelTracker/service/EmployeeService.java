@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.parcelTracker.dao.CourierRepository;
 import com.chainsys.parcelTracker.dao.EmployeeRepository;
-import com.chainsys.parcelTracker.pojo.Courier;
-import com.chainsys.parcelTracker.pojo.Employee;
+import com.chainsys.parcelTracker.model.Courier;
+import com.chainsys.parcelTracker.model.Employee;
 @Service
 public class EmployeeService {
     @Autowired

@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.parcelTracker.pojo.Courier;
-import com.chainsys.parcelTracker.pojo.CourierStatus;
+import com.chainsys.parcelTracker.model.Courier;
+import com.chainsys.parcelTracker.model.CourierStatus;
 @Repository
 public interface CourierStatusRepository extends CrudRepository<CourierStatus, Integer>{
 	

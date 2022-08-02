@@ -1,4 +1,4 @@
-package com.chainsys.parcelTracker.pojo;
+package com.chainsys.parcelTracker.model;
 
 import java.util.Date;
 

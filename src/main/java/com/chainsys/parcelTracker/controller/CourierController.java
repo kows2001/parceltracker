@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.parcelTracker.pojo.Courier;
-import com.chainsys.parcelTracker.pojo.CourierStatus;
+import com.chainsys.parcelTracker.model.Courier;
+import com.chainsys.parcelTracker.model.CourierStatus;
 import com.chainsys.parcelTracker.service.CourierService;
 import com.chainsys.parcelTracker.service.CourierStatusService;
 
@@ -23,7 +23,7 @@ public class CourierController {
 	@Autowired
 	CourierStatusService coStatusService;
 
-	@GetMapping("/registerform2")
+	@GetMapping("/courierregister")
 	public String showRegisterForm2(Model model) {
 		Courier theCus = new Courier();
 		model.addAttribute("neworder", theCus);
@@ -33,14 +33,14 @@ public class CourierController {
 	@PostMapping("/neworder")
 	public String addneworder(@ModelAttribute("neworder") Courier theCourier) {
 		courierservice.addCourierDetails(theCourier);
-		return null;
+		return "welcome";
 	}
 
 	@GetMapping("/courierlist")
 	public String registeredlist(Model model) {
 		Iterable<Courier> colist = courierservice.getCourierDetails();
 		model.addAttribute("listofregisteredCourier", colist);
-		return "registeredList";
+		return "registered-list";
 	}
 	
 	@GetMapping("/backtoregisteredlist")
@@ -48,39 +48,39 @@ public class CourierController {
 		return "redirect:/courier/courierlist";           
 	}
 	
-	@GetMapping("/courierstatuslist")
-	public String courierStatusDetailslist(Model model) {
-		Iterable<CourierStatus> costatuslist = coStatusService.getCourierDetails();
-		model.addAttribute("courierstatuslist", costatuslist);
-		return "courierstatuslist";
-	}
-
-	@GetMapping("/courierstatusadd")
-	public String updateCourierDetails(Model model) {
-
-		CourierStatus costatus = new CourierStatus();
-		model.addAttribute("addstatus", costatus);
-		return "courierstatusadd-form";
-	}
-
-	@PostMapping("/courierStatusAdd")
-	public String addNewCus(@ModelAttribute("addstatus") CourierStatus costatus) {
-		coStatusService.addCourierDetails(costatus);
-
-		return "redirect:/courier/courierstatuslist";
-	}
-	@GetMapping("/courierstatusupdate")
-	public String showUpdateForm(@RequestParam("reference_no") int id, Model model) {
-		CourierStatus costatus = coStatusService.findDetailsByRefId(id);
-		model.addAttribute("updatestatus", costatus);
-		return "courierstatusupdate-form";
-	}
-
-	@PostMapping("/courierStatusUpdate")
-	public String updateStatusDetail(@ModelAttribute("updatestatus") CourierStatus costatus) {
-		coStatusService.addCourierDetails(costatus);
-		return "redirect:/courier/courierstatuslist";
-	}
-
+//	@GetMapping("/courierstatuslist")
+//	public String courierStatusDetailslist(Model model) {
+//		Iterable<CourierStatus> costatuslist = coStatusService.getCourierDetails();
+//		model.addAttribute("courierstatuslist", costatuslist);
+//		return "courierstatuslist";
+//	}
+//
+//	@GetMapping("/courierstatusadd")
+//	public String updateCourierDetails(Model model) {
+//
+//		CourierStatus costatus = new CourierStatus();
+//		model.addAttribute("addstatus", costatus);
+//		return "courierstatusadd-form";
+//	}
+//
+//	@PostMapping("/courierStatusAdd")
+//	public String addNewCus(@ModelAttribute("addstatus") CourierStatus costatus) {
+//		coStatusService.addCourierDetails(costatus);
+//
+//		return "redirect:/courier/courierstatuslist";
+//	}
+//	@GetMapping("/courierstatusupdate")
+//	public String showUpdateForm(@RequestParam("reference_no") int id, Model model) {
+//		CourierStatus costatus = coStatusService.findDetailsByRefId(id);
+//		model.addAttribute("updatestatus", costatus);
+//		return "courierstatusupdate-form";
+//	}
+//
+//	@PostMapping("/courierStatusUpdate")
+//	public String updateStatusDetail(@ModelAttribute("updatestatus") CourierStatus costatus) {
+//		coStatusService.addCourierDetails(costatus);
+//		return "redirect:/courier/courierstatuslist";
+//	}
+//
 
 }

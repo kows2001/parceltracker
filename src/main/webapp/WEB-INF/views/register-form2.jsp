@@ -63,7 +63,7 @@
 					</div>
 				</div>
 
-				<form:button>Add new</form:button>
+				<form:button>Register</form:button>
 			</form:form>
 		</div>
 	</div>

@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.chainsys.parcelTracker.pojo.Employee;
+import com.chainsys.parcelTracker.model.Employee;
 import com.chainsys.parcelTracker.service.EmployeeService;
 
 
 @Controller
 @RequestMapping("/admin")
-public class AdminController {
+public class EmployeeController {
 	
 	@Autowired
 	EmployeeService empservice;
@@ -38,7 +38,7 @@ public class AdminController {
 	public String adminaccessform(Model model) {
 		Employee theemp = new Employee();
 		model.addAttribute("admin", theemp);
-		return "adminLogin-form";
+		return "employee-login-form";
 	}
 	@PostMapping("/check")
 	public String checkingaccess(@ModelAttribute("admin") Employee admin) {

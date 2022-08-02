@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.parcelTracker.pojo.Courier;
+import com.chainsys.parcelTracker.model.Courier;
 
 public interface CourierRepository extends CrudRepository<Courier, Integer>{
 	
