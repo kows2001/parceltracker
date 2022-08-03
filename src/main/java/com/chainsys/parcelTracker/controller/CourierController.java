@@ -1,6 +1,5 @@
 package com.chainsys.parcelTracker.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +19,7 @@ import com.chainsys.parcelTracker.service.CourierStatusService;
 public class CourierController {
 	@Autowired
 	CourierService courierservice;
-	@Autowired
-	CourierStatusService coStatusService;
-
+	
 	@GetMapping("/courierregister")
 	public String showRegisterForm2(Model model) {
 		Courier theCus = new Courier();
@@ -42,45 +39,11 @@ public class CourierController {
 		model.addAttribute("listofregisteredCourier", colist);
 		return "registered-list";
 	}
-	
+
 	@GetMapping("/backtoregisteredlist")
 	public String redirectToRegisteredList() {
-		return "redirect:/courier/courierlist";           
+		return "redirect:/courier/courierlist";
 	}
-	
-//	@GetMapping("/courierstatuslist")
-//	public String courierStatusDetailslist(Model model) {
-//		Iterable<CourierStatus> costatuslist = coStatusService.getCourierDetails();
-//		model.addAttribute("courierstatuslist", costatuslist);
-//		return "courierstatuslist";
-//	}
-//
-//	@GetMapping("/courierstatusadd")
-//	public String updateCourierDetails(Model model) {
-//
-//		CourierStatus costatus = new CourierStatus();
-//		model.addAttribute("addstatus", costatus);
-//		return "courierstatusadd-form";
-//	}
-//
-//	@PostMapping("/courierStatusAdd")
-//	public String addNewCus(@ModelAttribute("addstatus") CourierStatus costatus) {
-//		coStatusService.addCourierDetails(costatus);
-//
-//		return "redirect:/courier/courierstatuslist";
-//	}
-//	@GetMapping("/courierstatusupdate")
-//	public String showUpdateForm(@RequestParam("reference_no") int id, Model model) {
-//		CourierStatus costatus = coStatusService.findDetailsByRefId(id);
-//		model.addAttribute("updatestatus", costatus);
-//		return "courierstatusupdate-form";
-//	}
-//
-//	@PostMapping("/courierStatusUpdate")
-//	public String updateStatusDetail(@ModelAttribute("updatestatus") CourierStatus costatus) {
-//		coStatusService.addCourierDetails(costatus);
-//		return "redirect:/courier/courierstatuslist";
-//	}
-//
+
 
 }

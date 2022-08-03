@@ -1,15 +1,19 @@
 package com.chainsys.parcelTracker.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "CUSTOMER")
 public class Customer {
+	
 	@Id
 	@Column(name = "customer_id")
 	private int customerId;
@@ -37,6 +41,17 @@ public class Customer {
 
 	@Column(name = "state")
 	private String state;
+
+	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+	private List<Courier> courierlist;
+
+	public List<Courier> getCourierlist() {
+		return courierlist;
+	}
+
+	public void setCourierlist(List<Courier> courierlist) {
+		this.courierlist = courierlist;
+	}
 
 	public String getGender() {
 		return gender;

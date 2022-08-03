@@ -36,7 +36,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		         <a href="backtoregisteredlist">Back To Registered List</a>
+		         <a href="/courier/backtoregisteredlist">Back To Registered List</a>
 	</div>
 </body>
 </html>

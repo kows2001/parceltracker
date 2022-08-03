@@ -9,15 +9,16 @@ import com.chainsys.parcelTracker.dao.CourierRepository;
 import com.chainsys.parcelTracker.model.Courier;
 @Service
 public class CourierService {
-    @Autowired
-	private CourierRepository repo;
+   @Autowired
+	private CourierRepository courierRepo;
 	
 	public Courier addCourierDetails(Courier courier) {
-		return repo.save(courier);
+		return courierRepo.save(courier);
 	}
 	
 	public Iterable<Courier> getCourierDetails(){
-		Iterable<Courier> colist =  repo.findAll();
+		Iterable<Courier> colist =  courierRepo.findAll();
 		return colist;
 	}
+	
 }

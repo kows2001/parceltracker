@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.parcelTracker.dto.CustomerCourierDTO;
 import com.chainsys.parcelTracker.model.Customer;
 import com.chainsys.parcelTracker.model.Employee;
 import com.chainsys.parcelTracker.service.CourierService;
@@ -29,6 +30,8 @@ public class CustomerController {
 
 	@Autowired
 	EmployeeService empservice;
+	
+	
 
 //       @GetMapping("/registerform")
 //		public String showRegisterForm(Model model) {
@@ -86,9 +89,19 @@ public class CustomerController {
 		
 
 	}
+	
 	@GetMapping("/gototrackandregister")
 	public String goToTrackAndRegisterForm() {
 		return "courier-register-and-track";
 	}
+	
+	@GetMapping("/getcustomercourierlist")
+    public String getDocumentUser(@RequestParam("customerById") int id ,Model model)
+    {
+        CustomerCourierDTO customerCourierdto = customerService.getCourierList(id);
+        model.addAttribute("getCustomer", customerCourierdto.getCustomerById());
+        model.addAttribute("courierlist", customerCourierdto.getCourierList());
+        return "customer-courier-list";
+    }
 
 }

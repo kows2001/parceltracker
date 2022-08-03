@@ -10,13 +10,13 @@ import com.chainsys.parcelTracker.model.Employee;
 @Service
 public class EmployeeService {
     @Autowired
-	private EmployeeRepository repo;
+	private EmployeeRepository EmployeeRepo;
 	
 	public Employee addEmployeeDetails(Employee emp) {
-		return repo.save(emp);
+		return EmployeeRepo.save(emp);
 	}
 	
 	public Employee getAdminAccess() {
-		return repo.getAdminAccess();
+		return EmployeeRepo.getAdminAccess();
 	}
 }

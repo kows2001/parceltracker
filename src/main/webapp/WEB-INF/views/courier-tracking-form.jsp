@@ -10,17 +10,21 @@
 <body>
   <div id="root">
 		<div id="form">
-			<form:form action="courierStatusAdd" method="post" modelAttribute="addstatus">
+			<form action="courierStatusByRefNo"  >
 				<div>
 					<label for="courierReferenceNo">Enter Your Courier Reference Number</label>
+					
 					<div>
-						<form:input path="courierReferenceNo" />
+						<%-- <form:input path="courierReferenceNo" /> --%>
+						<input type = "text" id = "courierReferenceNo" name = "courierReferenceNo"/>
 					</div>
 				</div>
 				
 				
-				<form:button>Track your courier</form:button>
-			</form:form>
+				<input type="submit" value = "track"/>
+			</form>
+			
+			<%-- <a href="/courierstatus/courierstatusupdate?courierReferenceNo=${co.courierReferenceNo}">Update Courier Status</a></td> --%>
 		</div>
 	</div>
 </body>

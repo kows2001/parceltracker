@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1> welcome</h1>
-<h2 style='colour: green;'> Your Courier Was Registered Successfully</h2>
+<h2 style='text:colour= green;'> Your Courier Was Registered Successfully</h2>
+<a href = "/customer/gototrackandregister">Back To Track and Register</a>
 </body>
 </html>

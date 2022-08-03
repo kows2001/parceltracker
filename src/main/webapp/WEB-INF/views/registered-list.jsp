@@ -31,14 +31,14 @@
 					    <td>${co.courierReferenceNo}</td>
 						<td>${co.customerId}</td>
 						<td>${co.courierType}</td>
-						<td>${co.courierWeight}</td>
+                        <td>${co.courierWeight}</td>
 						<td>${co.courierCost}</td>
 						<td>${co.source}</td>
 						<td>${co.destination}</td>
 						<td>${co.bookedDate}</td>
 						<td>${co.expectedDate}</td>
-						<td><a href="courierstatusadd">Add Courier Status</a></td>
-						<td><a href="courierstatusupdate?reference_no=${co.reference_no}">Update Courier Status</a></td>
+						<td><a href="/courierstatus/courierstatusadd">Add Courier Status</a></td>
+						<td><a href="/courierstatus/courierstatusupdate?courierReferenceNo=${co.courierReferenceNo}">Update Courier Status</a></td>
 					</tr>
 				</c:forEach>
 				

@@ -13,19 +13,19 @@ import com.chainsys.parcelTracker.model.CourierStatus;
 @Service
 public class CourierStatusService {
 	 @Autowired
-		private CourierStatusRepository repo;
+		private CourierStatusRepository courierStatusRepo;
 		
 		public CourierStatus addCourierDetails(CourierStatus courierstatus) {
-			return repo.save(courierstatus);
+			return courierStatusRepo.save(courierstatus);
 		}
 		
 		public Iterable<CourierStatus> getCourierDetails(){
-			Iterable<CourierStatus> colist =  repo.findAll();
+			Iterable<CourierStatus> colist =  courierStatusRepo.findAll();
 			return colist;
 		}
 		
 		public CourierStatus findDetailsByRefId(int id) {
-			CourierStatus courierStatusDetails = repo.findById(id);
+			CourierStatus courierStatusDetails = courierStatusRepo.findById(id);
 			return courierStatusDetails;
 			
 		}
