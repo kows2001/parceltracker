@@ -19,26 +19,10 @@ import com.chainsys.parcelTracker.service.EmployeeService;
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
-	
-	
 
 	@Autowired
 	CustomerService customerService;
 
-	@Autowired
-	CourierService courierservice;
-
-	@Autowired
-	EmployeeService empservice;
-	
-	
-
-//       @GetMapping("/registerform")
-//		public String showRegisterForm(Model model) {
-//			Customer theCus = new Customer();
-//			model.addAttribute("neworder", theCus);
-//			return "register-form";
-//		}
 
 	@GetMapping("/signupform")
 	public String showCustomerForm(Model model) {
@@ -51,14 +35,7 @@ public class CustomerController {
 	public String addNewCus(@ModelAttribute("newcus") Customer theCus) {
 		customerService.insertCustomer(theCus);
 
-		return null;
-	}
-
-	@GetMapping("/registerform1")
-	public String showRegisterForm1(@RequestParam("cusid") int id, Model model) {
-		Customer theCus = customerService.retriveDetails(id);
-		model.addAttribute("register", theCus);
-		return "register-form1";
+		return "redirect:/customer/customerlogin";
 	}
 
 	@GetMapping("/customerlogin")
@@ -70,38 +47,23 @@ public class CustomerController {
 
 	@PostMapping("/checkcustomerlogin")
 	public String checkingAccess(@ModelAttribute("customer") Customer cus) {
-//		Customer customerAccess = customerService.getCustomerAccess();
-//		if ((customerAccess.getCustomerName().equals(cus.getCustomerName()))
-//					&& (customerAccess.getPassword()
-//					.equals(cus.getPassword()))){
-//
-//			return "redirect:/customer/gototrackandregister";
-//		} else
-//			return null;
-		
-		if ((("ammu").equals(cus.getCustomerName()))
-				&& (("ammu2001")
-				.equals(cus.getPassword()))){
+		Customer customer = customerService.getCustomerByNameAndPassword(cus.getCustomerName(), cus.getPassword());
+		if (customer != null) {
 
-		return "redirect:/customer/gototrackandregister";
-	} else
-		return null;
-		
+			return "redirect:/customer/gototrackandregister";
+		} else
+			return "invalid-customer-error";
 
 	}
-	
+
 	@GetMapping("/gototrackandregister")
 	public String goToTrackAndRegisterForm() {
 		return "courier-register-and-track";
 	}
-	
-	@GetMapping("/getcustomercourierlist")
-    public String getDocumentUser(@RequestParam("customerById") int id ,Model model)
-    {
-        CustomerCourierDTO customerCourierdto = customerService.getCourierList(id);
-        model.addAttribute("getCustomer", customerCourierdto.getCustomerById());
-        model.addAttribute("courierlist", customerCourierdto.getCourierList());
-        return "customer-courier-list";
-    }
+
+	@GetMapping("/couriersendbyyou")
+	public String goToOneCourierCustomerForm() {
+		return "onecustomer-courier-form";
+	}
 
 }

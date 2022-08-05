@@ -17,7 +17,7 @@ import com.chainsys.parcelTracker.service.EmployeeService;
 public class EmployeeController {
 	
 	@Autowired
-	EmployeeService empservice;
+	EmployeeService employeeService;
 	
 	@GetMapping("/employeeform")
 	public String showEmployeeForm(Model model) {
@@ -30,7 +30,7 @@ public class EmployeeController {
 	@PostMapping("/newemp")
 	public String addNewCus(@ModelAttribute("newemp") Employee theemp) {
       
-     empservice.addEmployeeDetails(theemp); 
+     employeeService.addEmployeeDetails(theemp); 
 	return null;
 	}
 	
@@ -41,14 +41,12 @@ public class EmployeeController {
 		return "employee-login-form";
 	}
 	@PostMapping("/check")
-	public String checkingaccess(@ModelAttribute("admin") Employee admin) {
-	Employee adminaccess  =	empservice.getAdminAccess();
-		if((adminaccess.getEmployeeName().equals(admin.getEmployeeName()))&& (adminaccess.getEmployeePassword()
-				.equals(admin.getEmployeePassword()))&&(adminaccess.getEmployeeRole().equals(admin.getEmployeeRole()))){
-			
+	public String checkingaccess(@ModelAttribute("admin") Employee employee) {
+	Employee admin  = employeeService.getEmployeeByRoleAndNameAndPassword(employee.getEmployeeRole(), employee.getEmployeeName(),employee.getEmployeePassword());
+		if(admin!=null) {
 		        return "redirect:/courier/courierlist";
 		        }
-		else return null;
+		else return "invalid-customer-error";
 			
 		}
 	}

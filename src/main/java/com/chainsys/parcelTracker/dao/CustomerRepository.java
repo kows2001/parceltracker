@@ -15,15 +15,12 @@ public interface CustomerRepository  extends JpaRepository<Customer, Integer>{
 	
 	Customer findById(int id);
 
-	Customer save(Customer dr); 
+	Customer save(Customer customer); 
 
 	void deleteById(int id);
 
 	List<Customer> findAll();
 	
-	@Query(value="select * from CUSTOMER ", nativeQuery = true)
-	Customer getCustomerAccessForLogin();
-	
-	
+	Customer findByCustomerNameAndPassword(String name, String password);
 }
-
+	

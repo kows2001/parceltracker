@@ -12,6 +12,8 @@ public class CustomerCourierDTO {
 	
 	@Autowired
     private Customer customer;
+	
+	
     private List<Courier> courierlist=new ArrayList<Courier>();
     public 	Customer getCustomerById() {
         return customer;

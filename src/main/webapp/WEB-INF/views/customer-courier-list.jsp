@@ -9,15 +9,9 @@
 <title>Courier Registered Details</title>
 </head>
 <body>
-      <form:form action="" method="post" modelAttribute="getCustomer">
-			
-				<h2>COURIER DETAILS</h2>
-				<div>
-					<label for="courierReferenceNo">Courier ReferenceNo</label>
-					<div>
-						<form:input path="courierReferenceNo" />
-					</div>
-				</div>
+	<div id="root">
+		<div id="form">
+			<form:form action="" method="post" modelAttribute="getCustomer">
 				<div>
 					<label for="customerId">CustomerId</label>
 					<div>
@@ -25,49 +19,62 @@
 					</div>
 				</div>
 				<div>
-					<label for="courierType">Courier type</label>
+					<label for="customerName"> Customer Name</label>
 					<div>
-						<form:input path="courierType" />
-					</div>
-				</div><div>
-					<label for="courierWeight">Courier Weight</label>
-					<div>
-						<form:input path="courierWeight" />
-					</div>
-				</div><div>
-					<label for="courierCost">Courier Cost</label>
-					<div>
-						<form:input path="courierCost" />
-					</div>
-				</div><div>
-					<label for="source">Source </label>
-					<div>
-						<form:input path="source" />
-					</div>
-				</div><div>
-					<label for="destination">Destination</label>
-					<div>
-						<form:input path="destination" />
-					</div>
-				</div><div>
-					<label for="bookedDate">Booked Date</label>
-					<div>
-						<form:input path="bookedDate" />
-					</div>
-				</div><div>
-					<label for="expectedDate">Expected Date</label>
-					<div>
-						<form:input path="expectedDate" />
+						<form:input path="customerName" />
 					</div>
 				</div>
-
-				
+				<div>
+					<label for="gender">Gender</label>
+					<div>
+						<form:input path="gender" />
+					</div>
+				</div>
+				<div>
+					<label for="dateOfJoining">Date Of Joining</label>
+					<div>
+						<form:input path="dateOfJoining" />
+					</div>
+				</div>
+				<div>
+					<label for="email">email</label>
+					<div>
+						<form:input path="email" />
+					</div>
+				</div>
+				<div>
+					<label for="password">password</label>
+					<div>
+						<form:input path="password" />
+					</div>
+				</div>
+				<div>
+					<label for="phoneNumber">Phone Number</label>
+					<div>
+						<form:input path="phoneNumber" />
+					</div>
+				</div>
+				<div>
+					<label for="city">city</label>
+					<div>
+						<form:input path="city" />
+					</div>
+				</div>
+				<div>
+					<label for="state">state</label>
+					<div>
+						<form:input path="state" />
+					</div>
+				</div>
+				<form:button>Add new Doctor</form:button>
 			</form:form>
+		</div>
+	</div>
 	<div id="table root">
 		<table>
 			<thead>
 				<tr>
-				    <th>Courier ReferenceNo</th>
+					<th>Courier ReferenceNo</th>
 					<th>customerId</th>
 					<th>courier Type</th>
 					<th>Courier Weight</th>
@@ -81,23 +88,27 @@
 			<tbody>
 				<c:forEach var="co" items="${courierlist}">
 					<tr>
-					    <td>${co.courierReferenceNo}</td>
+						<td>${co.courierReferenceNo}</td>
 						<td>${co.customerId}</td>
 						<td>${co.courierType}</td>
-                        <td>${co.courierWeight}</td>
+						<td>${co.courierWeight}</td>
 						<td>${co.courierCost}</td>
 						<td>${co.source}</td>
 						<td>${co.destination}</td>
 						<td>${co.bookedDate}</td>
 						<td>${co.expectedDate}</td>
-						
+
 					</tr>
 				</c:forEach>
-				
+
 			</tbody>
 		</table>
 
 	</div>
+
+
+
+
 </body>
 </html>
 

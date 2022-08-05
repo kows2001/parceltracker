@@ -17,9 +17,6 @@ import com.chainsys.parcelTracker.model.Employee;
 public class CustomerService {
 	@Autowired
 	private CustomerRepository customerRepo;
-	@Autowired
-	private CourierRepository courierRepo;
-	
 	
 	
 
@@ -31,21 +28,9 @@ public class CustomerService {
 		return customerRepo.findById(id);
 	}
 
-	public Customer getCustomerAccess() {
-		return customerRepo.getCustomerAccessForLogin();
+	public Customer getCustomerByNameAndPassword(String name, String password) {
+		return customerRepo.findByCustomerNameAndPassword(name, password);
 	}
 
-   public CustomerCourierDTO getCourierList(int customer_id) {
-    Customer cus = retriveDetails(customer_id);
-    CustomerCourierDTO dto = new CustomerCourierDTO();
-    dto.setCustomer(cus);
-    List<Courier> complaint = courierRepo.findByCustomerId(customer_id);
-    Iterator<Courier> iterator = complaint.iterator();
-    while (iterator.hasNext())
-    	dto.addCourierList((Courier) iterator.next() );
-    
-   return dto;
+	
 }
-}
- 
-

@@ -15,50 +15,43 @@ import javax.persistence.Table;
 public class Courier {
 
 	@Id
-	@Column(name = "reference_no")
+	@Column(name = "Reference_no")
 	private int courierReferenceNo;
 
-	@Column(name = "customer_id")
+	@Column(name = "Customer_id")
 	private int customerId;
 
-	@Column(name = "courier_type")
+	@Column(name = "Courier_type")
 	private String courierType;
 
-	@Column(name = "weight")
+	@Column(name = "Weight")
 	private float courierWeight;
 
-	@Column(name = "cost")
+	@Column(name = "Cost")
 	private float courierCost;
 
-	@Column(name = "source")
+	@Column(name = "Source")
 	private String source;
 
-	@Column(name = "destination")
+	@Column(name = "Destination")
 	private String destination;
 
-	@Column(name = "booked_date")
+	@Column(name = "Booked_date")
 	private Date bookedDate;
 
-	@Column(name = "expected_date")
+	@Column(name = "Expected_date")
 	private Date expectedDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "customer_id", nullable = false, insertable = false, updatable = false)
 	private Customer customer;
 
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
+	
 	public int getCourierReferenceNo() {
 		return courierReferenceNo;
 	}
 
-	public void setCourierReferenceNo(int courierReferenceNo) {
+	public void setCourierFReferenceNo(int courierReferenceNo) {
 		this.courierReferenceNo = courierReferenceNo;
 	}
 
@@ -124,6 +117,14 @@ public class Courier {
 
 	public void setExpectedDate(Date expectedDate) {
 		this.expectedDate = expectedDate;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }
