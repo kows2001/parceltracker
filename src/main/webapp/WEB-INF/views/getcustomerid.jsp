@@ -8,14 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <div id="root">
+  <div >
 		<div id="form">
 			<form action="getcustomercourierlist"  >
 				<div>
-					<label for="customerId">Enter Your Customer Id</label>
+					<label for="phoneNumber">Enter Your Customer Id</label>
 					
 					<div>
-						<input type = "text" id ="customerId" name = "customerId" />
+						<input type = "text" id ="phoneNumber" name = "phoneNumber" />
 					</div>
 				</div>
 				

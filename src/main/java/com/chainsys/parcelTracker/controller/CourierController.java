@@ -1,5 +1,7 @@
 package com.chainsys.parcelTracker.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.parcelTracker.model.Courier;
 import com.chainsys.parcelTracker.model.CourierStatus;
+import com.chainsys.parcelTracker.model.Customer;
 import com.chainsys.parcelTracker.service.CourierService;
 import com.chainsys.parcelTracker.service.CourierStatusService;
 
@@ -21,17 +24,37 @@ public class CourierController {
 	CourierService courierservice;
 	
 	@GetMapping("/courierregister")
-	public String showRegisterForm2(Model model) {
-		Courier theCus = new Courier();
-		model.addAttribute("neworder", theCus);
-		return "register-form2";
+	public String showRegisterForm( @RequestParam("customerId") int id,Model model) {
+		Courier theCourier = new Courier();
+		System.out.println("debug: CourierCountroler.showRegisterationForm " + id);
+		theCourier.setCustomerId(id);
+		model.addAttribute("neworder", theCourier);
+		return "registeration-form";
 	}
 
 	@PostMapping("/neworder")
-	public String addneworder(@ModelAttribute("neworder") Courier theCourier) {
-		courierservice.addCourierDetails(theCourier);
+	public String addneworder(@ModelAttribute("neworder") Courier theCourier  , Model model) {
+		 Courier courier =courierservice.addCourierDetails(theCourier);
+		 int courierReferenceNo = courier.getCourierReferenceNo();
+		 
+		 Courier courierRef = new Courier();
+		System.out.println("hkjhiyiugu"+courierReferenceNo);
+		
+		courierRef.setCourierReferenceNo(courierReferenceNo);
+		model.addAttribute("courierReferenceNo", courierRef );
 		return "welcome";
+		
+		
+
 	}
+	
+	/*
+	 * @GetMapping("/getReferenceNo") public String
+	 * getReferenceNumber(@RequestParam("courierReferenceNo") int refNo, Model
+	 * model) { Courier courier = new Courier();
+	 * courier.setCourierReferenceNo(refNo); return "welcome"; }
+	 */
+	
 
 	@GetMapping("/courierlist")
 	public String registeredlist(Model model) {
@@ -39,7 +62,8 @@ public class CourierController {
 		model.addAttribute("listofregisteredCourier", colist);
 		return "registered-list";
 	}
-
+    
+	 
 	@GetMapping("/backtoregisteredlist")
 	public String redirectToRegisteredList() {
 		return "redirect:/courier/courierlist";

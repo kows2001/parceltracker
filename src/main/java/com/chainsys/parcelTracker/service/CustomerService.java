@@ -28,9 +28,14 @@ public class CustomerService {
 		return customerRepo.findById(id);
 	}
 
-	public Customer getCustomerByNameAndPassword(String name, String password) {
-		return customerRepo.findByCustomerNameAndPassword(name, password);
+	public Customer getCustomerByEmailAndPassword(String email, String password) {
+		return customerRepo.findByEmailAndPassword(email, password);
 	}
+	
+	/*
+	 * public int getCustomerIdByPhoneNumber(long phno) { return
+	 * customerRepo.findCustomerIdByPhoneNumber(phno); }
+	 */
 
 	
 }

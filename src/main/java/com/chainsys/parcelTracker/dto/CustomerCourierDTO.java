@@ -15,15 +15,17 @@ public class CustomerCourierDTO {
 	
 	
     private List<Courier> courierlist=new ArrayList<Courier>();
-    public 	Customer getCustomerById() {
-        return customer;
-    }
+
+	
+	 public Customer getCustomerById() { return customer; }
+	 
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-    public List<Courier> getCourierList() {
-        return courierlist;
-    }
+
+	
+	 public List<Courier> getCourierList() { return courierlist; }
+	
     public void addCourierList(Courier courierList)
     {
     	courierlist.add(courierList);

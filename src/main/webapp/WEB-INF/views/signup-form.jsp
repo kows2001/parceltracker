@@ -6,39 +6,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style><%@include file="/WEB-INF/views/css/signupform.css"%>
+
+ </style>
 </head>
-<body style="background-color: skyblue;">
-	<h2 align="center">Get started with a free account</h2>
-	<div id="root">
-		<div id="form">
-			<div align="center">
-				<table border="" width=50% cellpadding="10">
+<body >    
+                   <h2 align="center">Get started with a free account</h2>
+	            <div class ="container">
 					<form:form action="newcustomer" method="post"
 						modelAttribute="newcus">
-						<tr>
-							<div>
-								<td><label for="customerId">CustomerId</label></td>
-								<td>
-									<div>
-										<form:input path="customerId" />
+						
+							
+								<div class="row">
+							<div class="col-25">
+						
+							<label for="customerName"> Customer Name</label></td>
+								</div>
+									<div class="col-75">
+										<form:input path="customerName" placeholder="Customer Name" title="Enter the valid name" 
+										 pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 									</div>
-								</td></div>
-						</tr>
-						<tr>
-							<div>
-								<td><label for="customerName"> Customer Name</label></td>
-								<td>
-									<div>
-										<form:input path="customerName" />
-									</div>
-								</td>
+								<form:errors path="customerName" cssClass="text-danger" />
 							</div>
-						</tr>
-						<tr>
-							<div>
-								<td><label for="gender">Select Gender</label></td>
-								<td>
-									<div>
+						
+						     <div class="row">
+							<div class="col-25">
+						
+							
+								<label for="gender">Select Gender</label></td>
+								
+									</div>
+									<div class="col-75">
 
 										Male:
 										<form:radiobutton path="gender" value="Male" />
@@ -47,56 +45,58 @@
 										Transgender:
 										<form:radiobutton path="gender" value="Transgender" />
                                     </div>
-								</td>
+							
 							</div>
-						</tr>
-						<tr>
-
-							<div>
-								<td><label for="dateOfJoining">Date Of Joining</label></td>
-								<td>
-									<div>
-										<form:input path="dateOfJoining" type="date" />
+							  <div class="row">
+							<div class="col-25">
+							
+						<label for="dateOfJoining">Date Of Joining</label></td>
+								</div>
+									<div class="col-75">
+										<form:input path="dateOfJoining"  type="date"/>
 									</div>
-								</td>
-							</div>
-						</tr>
-						<tr>
-							<div>
-								<td><label for="email">Email</label></td>
-								<td>
-									<div>
-										<form:input path="email" />
+								</div> 
+								 <div class="row">
+							<div class="col-25">
+							<label for="email">Email</label>
+								</div>
+									<div class="col-75">
+										<form:input path="email"  placeholder="Email" title="Enter a valid email" 
+										 pattern="^(.+)@(\\S+)$" required="true"/>
 									</div>
-								</td>
+								<form:errors path="email" cssClass="text-danger" />
 							</div>
-						</tr>
-						<tr>
-							<div>
-								<td><label for="password">Password</label></td>
-								<td>
-									<div>
-										<form:input path="password" />
+							 <div class="row">
+							<div class="col-25">
+							
+					<label for="password">Password</label>
+					</div>
+									<div class="col-75">
+										<form:input path="password"  type="password" 
+										title="password must begin with letter and contain atleast one number and must have atleast 8 characters"
+										pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
+										 placeholder="password"/>
 									</div>
-								</td>
+							
 							</div>
-						</tr>
-						<tr>
-							<div>
-								<td><label for="phoneNumber">Phone Number</label></td>
-								<td>
-									<div>
-										<form:input path="phoneNumber" />
+							<div class="row">
+							<div class="col-25">
+						<label for="phoneNumber">Phone Number</label></td>
+							</div>
+									<div class="col-75">
+										<form:input path="phoneNumber" placeholder="Phone Number"
+										title="phone number should have 10 digits"
+					                	pattern="^\\+?[1-9][0-9]{7,14}$" />
 									</div>
-								</td>
+								
 							</div>
-						</tr>
-						<tr>
-							<div>
-								<td><label for="city">city</label></td>
-								<td>
-									<div>
+							<div class="row">
+							<div class="col-25">
+						<label for="city">City</label></td>
+								</div>
+									<div class="col-75">
 										<form:select path="city">
+										    <form:option value="Ariyalur">City</form:option>
 											<form:option value="Ariyalur">Ariyalur</form:option>
 											<form:option value="Chengalpattu">Chengalpattu</form:option>
 											<form:option value="Chennai">Chennai</form:option>
@@ -137,16 +137,15 @@
 										</form:select>
 
 									</div>
-								</td>
+								
 							</div>
-						</tr>
-						<tr>
-
-							<div>
-								<td><label for="state">state</label></td>
-								<td>
-									<div>
+							<div class="row">
+							<div class="col-25">
+						<label for="state">State</label></td>
+								</div>
+									<div class="col-75">
 										<form:select path="state">
+											<form:option value="Andhra Pradesh">State</form:option>
 											<form:option value="Andhra Pradesh">Andhra Pradesh</form:option>
 											<form:option value="Andaman and Nicobar Islands">Andaman and
 							Nicobar Islands</form:option>
@@ -187,17 +186,19 @@
 											<form:option value="West Bengal">West Bengal</form:option>
 										</form:select>
 									</div>
-								</td>
+								
 							</div>
-						</tr>
-						<tr>
-							<form:button>SignUp</form:button>
-							</td>
-						</tr>
+						    <div class="row">
+							<form:button class ="btn">SignUp</form:button>
+							
+						</div>
 					</form:form>
-				</table>
-			</div>
-		</div>
+					
+					</div>
+					 <div class="img">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1NJBlacRALrhl2wwfMxJ25RKixv0P3TMtEg&usqp=CAU.jpg" alt="W3Schools.com" width="400px"  height="500px">
+					</div> 
+				
 
 </body>
 </html>

@@ -19,19 +19,22 @@ import com.chainsys.parcelTracker.service.CustomerCourierService;
 import com.chainsys.parcelTracker.service.CustomerService;
 
 @Controller
-@RequestMapping("/customercourierservice")
+@RequestMapping("/customercourier")
 public class CustomerCourierController {
 	@Autowired
-	CustomerCourierService  customerCourierService;
+	CustomerCourierService customerCourierService;
+
 	
-	@GetMapping("/getcustomercourierlist")
-  public String getCustomerCourier(@RequestParam("customerId") int id ,Model model)
-  {
-      CustomerCourierDTO customerCourierdto = customerCourierService.getCourierList(id);
-      model.addAttribute("getCustomer", customerCourierdto.getCustomerById());
-      model.addAttribute("courierlist", customerCourierdto.getCourierList());
-      return "customer-courier-list";
-  }
-
-
+	
+	  @GetMapping("/getcustomercourierlist") 
+	  public String getCustomerCourier(@RequestParam("customerId") int id ,Model model) {
+	  CustomerCourierDTO customerCourierdto = customerCourierService.getCourierList(id);
+	  model.addAttribute("getCustomer",customerCourierdto.getCustomerById());
+	  model.addAttribute("courierlist", customerCourierdto.getCourierList());
+	  return "customer-courier-list"; }
+	 
+	 
+	
+	
+	
 }

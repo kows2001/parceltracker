@@ -66,9 +66,14 @@ public class CourierStatusController {
      }
      @GetMapping("/courierStatusByRefNo")
       public String courierStatusList(@RequestParam("courierReferenceNo") int refNo, Model model) { 
-      CourierStatus statusList = coStatusService.findDetailsByRefId(refNo);
-	  model.addAttribute("courierStatusByRefNo", statusList); 
-	  return  "courierstatus-by-refno"; }
+      CourierStatus status = coStatusService.findDetailsByRefId(refNo);
+	  model.addAttribute("courierstatusbyrefno", status); 
+	  if(status != null) {
+		  return  "courierstatus-by-refno";
+	  }
+	  return "error-courierStatus";
+	 
+	  }
 	 
       
      

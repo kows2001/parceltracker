@@ -1,13 +1,18 @@
 package com.chainsys.parcelTracker.controller;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.chainsys.parcelTracker.dto.CustomerCourierDTO;
 import com.chainsys.parcelTracker.model.Customer;
@@ -32,10 +37,17 @@ public class CustomerController {
 	}
 
 	@PostMapping("/newcustomer")
-	public String addNewCus(@ModelAttribute("newcus") Customer theCus) {
-		customerService.insertCustomer(theCus);
-
-		return "redirect:/customer/customerlogin";
+	public String addNewCus(@Valid @ModelAttribute("newcus") Customer theCus, Errors error) {
+		if(error.hasErrors()) {
+			
+           return "signup-form";
+		}
+		else {
+			//theCus.setDateOfJoining();
+			customerService.insertCustomer(theCus);
+			return "redirect:/customer/customerlogin";
+		}
+	
 	}
 
 	@GetMapping("/customerlogin")
@@ -44,26 +56,31 @@ public class CustomerController {
 		model.addAttribute("customer", theCus);
 		return "customer-login-form";
 	}
-
+     
+	
+	
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") Customer cus) {
-		Customer customer = customerService.getCustomerByNameAndPassword(cus.getCustomerName(), cus.getPassword());
+	public String checkingAccess(@ModelAttribute("customer") Customer cus ) {
+		Customer customer = customerService.getCustomerByEmailAndPassword(cus.getEmail(), cus.getPassword());
+		
 		if (customer != null) {
-
-			return "redirect:/customer/gototrackandregister";
+			System.out.println("debug: sign in "+customer.getCustomerId() );
+			return "redirect:/customer/gotodashboard?customerId="+ customer.getCustomerId();
 		} else
 			return "invalid-customer-error";
 
 	}
 
-	@GetMapping("/gototrackandregister")
-	public String goToTrackAndRegisterForm() {
-		return "courier-register-and-track";
+	@GetMapping("/gotodashboard")
+	public String goToTrackAndRegisterForm(@RequestParam("customerId") int id , Model model) {
+		model.addAttribute("customerId" , id);
+		return "dashboard";
 	}
 
-	@GetMapping("/couriersendbyyou")
-	public String goToOneCourierCustomerForm() {
-		return "onecustomer-courier-form";
+	
+	@GetMapping("/homePage")
+	public String goToHomePage() {
+		return "homePage";
 	}
 
 }

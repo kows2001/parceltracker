@@ -11,7 +11,7 @@
 <body>
 
 	<div id="table root">
-		<table>
+		<table border="2">
 			<thead>
 				<tr>
 				    <th>Courier ReferenceNo</th>

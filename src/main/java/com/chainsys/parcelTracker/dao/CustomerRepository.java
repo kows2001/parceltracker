@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.chainsys.parcelTracker.model.Customer;
 
 @Repository
-public interface CustomerRepository  extends JpaRepository<Customer, Integer>{
+public interface CustomerRepository  extends JpaRepository<Customer, Integer >{
 //	
 	
 	
@@ -21,6 +21,8 @@ public interface CustomerRepository  extends JpaRepository<Customer, Integer>{
 
 	List<Customer> findAll();
 	
-	Customer findByCustomerNameAndPassword(String name, String password);
+	Customer findByEmailAndPassword( String email, String password);
+	
+	/* Integer findCustomerIdByPhoneNumber(long phno); */
 }
 	

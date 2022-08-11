@@ -10,7 +10,7 @@
 </head>
 <div id="root">
         <div id="form">
-            <form:form action="" method="post" modelAttribute="courierStatusByRefNo">
+            <form:form action=""  modelAttribute="courierstatusbyrefno">
                 <div>
 					<label for="courierReferenceNo">Courier Reference No</label>
 					<div>

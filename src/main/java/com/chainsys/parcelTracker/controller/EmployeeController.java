@@ -13,7 +13,7 @@ import com.chainsys.parcelTracker.service.EmployeeService;
 
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/employee")
 public class EmployeeController {
 	
 	@Autowired
@@ -23,7 +23,7 @@ public class EmployeeController {
 	public String showEmployeeForm(Model model) {
 	Employee theemp = new Employee();
 		model.addAttribute("newemp", theemp);
-		return "emp-form";
+		return "employee-form";
 }
 		
 
@@ -34,7 +34,7 @@ public class EmployeeController {
 	return null;
 	}
 	
-	@GetMapping("/adminlogin")
+	@GetMapping("/employeelogin")
 	public String adminaccessform(Model model) {
 		Employee theemp = new Employee();
 		model.addAttribute("admin", theemp);

@@ -32,4 +32,9 @@ public class CustomerCourierService {
 
 		return dto;
 	}
+	/*
+	 * public int getCustomerIdByPhoneNumber(long phno) { return
+	 * customerRepo.findCustomerIdByPhoneNumber(phno); }
+	 */
+	 
 }

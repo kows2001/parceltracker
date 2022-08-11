@@ -7,44 +7,52 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Login</title>
+
+<style><%@include file="/WEB-INF/views/css/customerlogin.css"%>
+
+ </style>
 </head>
-<body style="background-color: beige;">
-	<body>
+<body>
+
 	<h2 align="center">Login</h2>
-	<div id="root">
-		<div align="center">
-			<table border="" width=50%>
-<form:form action="checkcustomerlogin" method="post"
-		modelAttribute="customer">
-		<tr>
-			<div>
-				<td><label for="customerName">User Name</label></td>
-				<td>
-					<div>
-						<form:input path="customerName" />
-					</div>
-				</td>
+	<div class="container">
+
+		<form:form action="checkcustomerlogin" method="post"
+			modelAttribute="customer">
+
+			<div class="row">
+				<div class="col-1">
+					<label for="email" >Email</label>
+				</div>
+
+				<div class="col-2">
+					<form:input path="email" placeholder="Email" />
+				</div>
+
 			</div>
-		</tr>
-		<tr>
-			<div>
-				<td><label for="password">Password</label></td>
-				<td>
-					<div>
-						<form:input path="password" />
+
+			<div class="row">
+				<div class="col-1">
+
+					<label for="password">Password</label>
 					</div>
-				</td>
-			</div>
-		</tr>
-		<td colspan="2"><form:button> Login </form:button></td>
-	</form:form>
-	</table>
-	<br>
-	<div align="center">
-		<label> Don't have an account</label> <a href="signupform"> <input
-			onclick="change()" type="button" value="Sign Up"></input>
-		</a>
+					
+						<div class="col-2">
+							<form:input path="password" placeholder="password" />
+						</div>
+					
+				</div>
+				
+				<form:button class="btn1"> Login </form:button>
+		</form:form>
+		
+		
+		<div align="center" class="btn2">
+			<label> Don't have an account</label> <a href="signupform"> <input
+				onclick="change()" type="button" value="Sign Up"></input>
+			</a>
+		</div>
 	</div>
 	</div>
-	</div>
-</body></html>
+</body>
+</html>
