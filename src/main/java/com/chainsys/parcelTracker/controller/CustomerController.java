@@ -37,7 +37,7 @@ public class CustomerController {
            return "signup-form";
 		}
 		else {
-			theCus.setDateOfJoining();
+			
 			customerService.insertCustomer(theCus);
 			return "redirect:/customer/customerlogin";
 		}
@@ -97,9 +97,8 @@ public class CustomerController {
 	  
 	  @PostMapping("/customerupdate") 
 	  public String updateStatusDetail(@ModelAttribute("updateCustomer") Customer customer, Model model) {
-			/*
-			 * Customer cus = new Customer(); cus.setPassword(customer.getPassword());
-			 */
+		  customer.setDateOfJoining();
+			System.out.println("fg"+customer.getDateOfJoining());
 		  customerService.updateCustomer(customer);
 			model.addAttribute("save","Changes Saved Successfully....");
 

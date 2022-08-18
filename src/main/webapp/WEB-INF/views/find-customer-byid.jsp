@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -37,7 +37,7 @@
 						<label for="customerId">CustomerId</label>
 					</div>
 					<div class="col-2">
-						<form:input path="customerId" />
+						<form:input path="customerId" readonly="true"/>
 					</div>
 				</div>
 
@@ -46,7 +46,7 @@
 						<label for="customerName"> Customer Name</label>
 					</div>
 					<div class="col-2">
-						<form:input path="customerName" />
+						<form:input path="customerName" readonly="true" />
 					</div>
 				</div>
 
@@ -55,7 +55,7 @@
 						<label for="gender">Gender</label>
 					</div>
 					<div class="col-2">
-						<form:input path="gender" />
+						<form:input path="gender" readonly="true" />
 					</div>
 				</div>
 
@@ -64,7 +64,7 @@
 						<label for="dateOfJoining">Date Of Joining</label>
 					</div>
 					<div class="col-2">
-						<form:input path="dateOfJoining" />
+						<form:input path="dateOfJoining"  readonly="true"/>
 					</div>
 				</div>
 
@@ -73,7 +73,7 @@
 						<label for="email">Email</label>
 					</div>
 					<div class="col-2">
-						<form:input path="email" />
+						<form:input path="email" readonly="true"/>
 					</div>
 					</div>
 
@@ -84,7 +84,7 @@
 						<label for="phoneNumber">Phone Number</label>
 					</div>
 					<div class="col-2">
-						<form:input path="phoneNumber" />
+						<form:input path="phoneNumber" readonly="true"/>
 					</div>
 				</div>
 
@@ -93,7 +93,7 @@
 						<label for="city">City</label>
 					</div>
 					<div class="col-2">
-						<form:input path="city" />
+						<form:input path="city" readonly="true"/>
 					</div>
 				</div>
 
@@ -102,7 +102,7 @@
 						<label for="state">State</label>
 					</div>
 					<div class="col-2">
-						<form:input path="state" />
+						<form:input path="state" readonly="true" />
 					</div>
 				</div >
 				<div  class="btn">

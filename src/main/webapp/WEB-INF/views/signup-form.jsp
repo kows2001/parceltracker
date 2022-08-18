@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -11,7 +11,7 @@
  </style>
  <script type="text/javascript">
  var customerNameCheck = function() {
-	 var nameRegex = new RegExp("^[A-Za-z]\\w{3,20}$");
+	 var nameRegex = new RegExp("^[a-zA-Z\\s]{3,20}$");
 	 if(!document.form.customerName.value.match(nameRegex)){
 			if(alert("Name can't be empty or must contain only alphabets")){ 
 				 document.form.customerName.focus();
@@ -63,7 +63,7 @@
 	    }
 	}
  var phoneNumberCheck = function() {
-	 var phoneRg = new RegExp("[1-9]{1}[0-9]{9}");
+	 var phoneRg = new RegExp("^[6-9]{1}[0-9]{9}$");
 	 if(!document.form.phoneNumber.value.match(phoneRg)){
 			if(alert("Phone Number not valid")){
 				 document.form.phoneNumber.focus();
@@ -76,7 +76,7 @@
     }
 } 
  var cityCheck = function() {
-		var cityRegex = new RegExp("^[a-zA-Z][a-zA-Z\\s]+$");
+		var cityRegex = new RegExp("^[a-zA-Z\\s]*$");
 		if(!document.form.city.value.match(cityRegex)){
 			if(alert("City name can't be empty or must contain only alphabets")){
 				 document.form.city.focus();
@@ -89,7 +89,7 @@
 	    }
 	}
  var stateCheck = function() {
-		var cityRegex = new RegExp("^[a-zA-Z][a-zA-Z\\s]+$");
+		var cityRegex = new RegExp("^[a-zA-Z\\s]*$");
 		if(!document.form.state.value.match(cityRegex)){
 			if(alert(" State can't be empty or must contain only alphabets")){
 				 document.form.state.focus();
@@ -135,7 +135,7 @@
 								</div>
 									<div class="col-75">
 										<form:input path="customerName" placeholder="Customer Name" title="Name length should be 3 to 20" 
-										 pattern="^[A-Za-z]\\w{3,20}$" required="true"  onblur="customerNameCheck();" name="customerName" id="customerName"/>
+										 pattern="^[a-zA-Z\\s]{3,20}$" required="true"  onblur="customerNameCheck();" name="customerName" id="customerName"/>
 									</div>
 								<form:errors path="customerName" cssClass="text-danger" />
 							</div>
@@ -189,8 +189,8 @@
 							</div>
 									<div class="col-75">
 										<form:input path="phoneNumber" placeholder="Phone Number"
-										title="phone number should have 10 digits"
-					                	pattern="[1-9]{1}[0-9]{9}" onblur="phoneNumberCheck();"  id="phoneNumber" name="phoneNumber"/>
+										title="*please enter valid phon number"
+					                	pattern="^[6-9]{1}[0-9]{9}$" onblur="phoneNumberCheck();"  id="phoneNumber" name="phoneNumber"/>
 									</div>
 								
 							</div>
@@ -201,7 +201,7 @@
 							<div class="col-75">
 										<form:input path="city" placeholder="City"
 										title="City name can't be empty or must contain only alphabets"
-					                	pattern="^[a-zA-Z]+$" onblur="cityCheck();"  id="city" name="city"/>	
+					                	pattern="^[a-zA-Z\\s]*$" onblur="cityCheck();"  id="city" name="city"/>	
 							</div>
 							</div>
 							<div class="row">
@@ -211,7 +211,7 @@
 									<div class="col-75">
 									<form:input path="state" placeholder="state"
 										title="State name can't be empty or must contain only alphabets"
-					                	pattern="^[a-zA-Z]+$" onblur="stateCheck();"  id="state" name="state"/>	
+					                	pattern="^[a-zA-Z\\s]*$" onblur="stateCheck();"  id="state" name="state"/>	
 										
 							</div>
 							</div>
