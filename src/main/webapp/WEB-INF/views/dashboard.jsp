@@ -16,8 +16,8 @@
 <div class="sidenav">
 
 
-
-  <a  class = "a1" href="/courier/courierregister?customerId=${customerId}">Register</a>
+   <a   href="/customer/findcustomerbyid?customerId=${customerId}">Profile</a>
+  <a   href="/courier/courierregister?customerId=${customerId}">Register</a>
   <a href="/courierstatus/trackingpage">Track Your Courier</a>
   <a href="/customercourier/getcustomercourierlist?customerId=${customerId}">Courier List</a>
 </div>

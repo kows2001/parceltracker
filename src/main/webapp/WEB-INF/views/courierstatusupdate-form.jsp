@@ -7,6 +7,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Courierr</title>
+
+<script>
+var date = new Date();
+var tdate = date.getDate();
+id(tdate<10){
+	tdate = '0'+tdate;
+}
+var month = date.getMonth()+1;
+if(month<10){
+	month = '0'+month;
+}
+var year = date.getUTCFullYear();
+var minDate = year + "-" + month + "-" + tdate;
+document.getElementById("date").setAttribute('min',minDate)
+
+</script>
 </head>
 <body>
    <div id="root">
@@ -15,13 +31,13 @@
 				<div>
 					<label for="courierReferenceNo">Courier ReferenceNo</label>
 					<div>
-						<form:input path="courierReferenceNo" />
+						<form:input path="courierReferenceNo" readonly = "true"/>
 					</div>
 				</div>
 				<div>
 					<label for="statusUpdateDate"> Status UpdateDate</label>
 					<div>
-						<form:input path="statusUpdateDate" />
+						<form:input path="statusUpdateDate" type = "date" id="date" />
 					</div>
 				</div>
 				<div>

@@ -7,48 +7,76 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add New Employee</title>
+<style><%@include file="/WEB-INF/views/css/courierstatusbyrefno.css"%>
+
+ </style>
 </head>
-<div id="root">
-        <div id="form">
+
+        <div class="container1">
+        <div class="form">
             <form:form action=""  modelAttribute="courierstatusbyrefno">
-                <div>
+                <div class="row">
+							<div class="col-1">
 					<label for="courierReferenceNo">Courier Reference No</label>
-					<div>
-						<form:input path="courierReferenceNo" />
+					</div>
+					<div class="col-2">
+						<form:input path="courierReferenceNo"  readonly="true"/>
 					</div>
 				</div>
-				<div>
+				<div class="row">
+							<div class="col-1">
 					<label for="statusUpdateDate">Status UpdateDate</label>
-					<div>
-						<form:input path="statusUpdateDate" />
+					</div>
+					<div class="col-2">
+						<form:input path="statusUpdateDate" readonly="true"/>
 					</div>
 				</div>
-				<div>
-					<label for="currentPlace">Current Place</currentPlace>
-					<div>
-						<form:input path="currentPlace" />
+				<div class="row">
+					<div class="col-1">
+					<label for="currentPlace">Current Place</label>
+					</div>
+					<div class="col-2">
+						<form:input path="currentPlace" readonly="true" />
 					</div>
 				</div>
-				<div>
-					<label for="checkInTime">check In Time</label>
-					<div>
-						<form:input path="checkInTime" />
+				<div class="row">
+							<div class="col-1">
+					<label for="checkInTime">Check In Time</label>
+					</div>
+					<div class="col-2">
+						<form:input path="checkInTime" readonly="true"/>
 					</div>
 				</div>
-				<div>
-					<label for="checkOutTime">Chec kOut Time</label>
-					<div>
-						<form:input path="checkOutTime" />
+				<div class="row">
+							<div class="col-1">
+					<label for="checkOutTime">Check Out Time</label>
+					</div>
+					<div class="col-2">
+						<form:input path="checkOutTime"  readonly="true"/>
 					</div>
 				</div>
-				<div>
+				<div class="row">
+							<div class="col-1">
 					<label for="courierStatus">Courier Status</label>
-					<div>
-						<form:input path="courierStatus" />
+					</div>
+					<div class="col-2">
+						<form:input path="courierStatus" readonly="true"/>
 					</div>
 				</div>
-				
-				            </form:form>
+				<a href="/customer/backtodashboard"> <input
+				onclick="change()" type="button" value="Back"></input>
+			</a>
+				 </form:form>
+				 </div>
         </div>
+       <div class="container">
+      <div class="img">
+					<img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGFyY2VsJTIwZGVsaXZlcnl8ZW58MHx8MHx8&w=1000&q=80.jpg" alt="W3Schools.com" width="600px"  height="600px">
+					</div> <div class="content">
+    <h1>Making sure your parcel gets to you when you need it.</h1>
+  </div>
+					
+</div> 
+
 </body>
 </html>

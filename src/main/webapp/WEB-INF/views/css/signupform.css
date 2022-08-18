@@ -2,13 +2,65 @@
 * {
   box-sizing: border-box;
 }
+body {
+	background-image: url("https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40659/FreevectorPurple-BackgroundAS0621_generated.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav {
+	width: 100%;
+	height: 80px;
+	Line-height: 80px;
+	margin-top:-20px;
+	margin-left:-8px;
+	padding: 0px 100px;
+	position: fixed;
+	background-image: linear-gradient(#033747, #012733);
+}
 
- input[type=text], select, textarea {
+nav .logo p {
+	font-size: 30px;
+	font-weight: bold;
+	float: left;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	cursor: pointer;
+	margin-top:1px;
+
+}
+
+nav ul {
+	float: right;
+	margin-top:7px;
+}
+
+nav li {
+	display: inline-block;
+	list-style: none;
+}
+
+nav li a {
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 10px 30px;
+	color: white;
+	text-decoration:none;
+}
+
+nav li a:hover {
+	color: #ff8c69;
+}
+ input[type=text] {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+}
+input[type=password]{
+	height: 37px;
+    width: 276px;
 }
 
 label {
@@ -17,8 +69,8 @@ label {
 } 
 
 .container {
-  margin-top:3%;
-  margin-left:5%;
+     margin-top: 122px;
+    margin-left: 119px;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -57,7 +109,7 @@ label {
   border: none;
   border-radius: 10px;
   box-shadow: 0 9px 	#9400D3;
-  margin-left:150px;
+  margin-left:192px;
    margin-top: 10px;
 }
 
@@ -70,7 +122,11 @@ label {
 }
 
 .img{
-	margin-left:50%;
+	margin-left:55%;
 	
-	margin-top:4%
+	margin-top:143px;
+}
+
+.btn2{
+	margin-left:254px;
 }

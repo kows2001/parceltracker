@@ -7,97 +7,47 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Courier Registered Details</title>
+<style><%@include file="/WEB-INF/views/css/customer-courier-list.css"%>
+
+ </style>
 </head>
 <body>
-	<div id="root">
-		<div id="form">
-			<form:form action="" method="post" modelAttribute="getCustomer">
-				<div>
-					<label for="customerId">CustomerId</label>
-					<div>
-						<form:input path="customerId" />
-					</div>
-				</div>
-				<div>
-					<label for="customerName"> Customer Name</label>
-					<div>
-						<form:input path="customerName" />
-					</div>
-				</div>
-				<div>
-					<label for="gender">Gender</label>
-					<div>
-						<form:input path="gender" />
-					</div>
-				</div>
-				<div>
-					<label for="dateOfJoining">Date Of Joining</label>
-					<div>
-						<form:input path="dateOfJoining" />
-					</div>
-				</div>
-				<div>
-					<label for="email">email</label>
-					<div>
-						<form:input path="email" />
-					</div>
-				</div>
-				<div>
-					<label for="password">password</label>
-					<div>
-						<form:input path="password" />
-					</div>
-				</div>
-				<div>
-					<label for="phoneNumber">Phone Number</label>
-					<div>
-						<form:input path="phoneNumber" />
-					</div>
-				</div>
-				<div>
-					<label for="city">city</label>
-					<div>
-						<form:input path="city" />
-					</div>
-				</div>
-				<div>
-					<label for="state">state</label>
-					<div>
-						<form:input path="state" />
-					</div>
-				</div>
-				<form:button>Add new Doctor</form:button>
-			</form:form>
-		</div>
-	</div>
-	<div id="table root">
-		<table>
+
+	<a href="/customer/backtodashboard"> <input
+				onclick="change()" type="button" value="Back"></input>
+			</a>
+	<h1>COURIER LIST</h1>
+	<br>
+	<br>
+	<br>
+	<div class="table">
+		<table  >
 			<thead>
 				<tr>
-					<th>Courier ReferenceNo</th>
-					<th>customerId</th>
-					<th>courier Type</th>
-					<th>Courier Weight</th>
-					<th>Courier Cost</th>
-					<th>source</th>
-					<th>destination</th>
-					<th>bookedDate</th>
-					<th>expectedDate</th>
+				    <th>CUSTOMER ID</th>
+				    <th>BOOKED DATE</th>
+					<th>COURIER REFERENCE NUMBER</th>
+					<th>TYPE OF COURIER</th>
+					<th>WEIGHT</th>
+					<th>COST</th>
+					<th>SOURCE</th>
+					<th>DESTINATION</th>
+					
+					
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="co" items="${courierlist}">
-					<tr>
-						<td>${co.courierReferenceNo}</td>
-						<td>${co.customerId}</td>
-						<td>${co.courierType}</td>
-						<td>${co.courierWeight}</td>
-						<td>${co.courierCost}</td>
-						<td>${co.source}</td>
-						<td>${co.destination}</td>
-						<td>${co.bookedDate}</td>
-						<td>${co.expectedDate}</td>
-
+					<tr><td>${co.customerId}</td>
+					<td>${co.bookedDate}</td>
+					<td>${co.courierReferenceNo}</td>
+					<td>${co.courierType}</td>
+					<td>${co.courierWeight}</td>
+					<td>${co.courierCost}</td>
+					<td>${co.source}</td>
+					<td>${co.destination}</td>
+						
+						
 					</tr>
 				</c:forEach>
 

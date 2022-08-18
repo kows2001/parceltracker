@@ -1,5 +1,6 @@
 package com.chainsys.parcelTracker.model;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -29,7 +30,7 @@ public class Courier {
 	private int customerId;
 
 	@Column(name = "Courier_type")
-	@NotBlank(message = "*Select courier type")
+    @NotBlank(message = "*Select courier type")
 	private String courierType;
 
 	@Column(name = "Weight")
@@ -45,10 +46,8 @@ public class Courier {
 	private String destination;
 
 	@Column(name = "Booked_date")
-	private Date bookedDate;
+	private String bookedDate;
 
-	@Column(name = "Expected_date")
-	private Date expectedDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "customer_id", nullable = false, insertable = false, updatable = false)
@@ -110,21 +109,17 @@ public class Courier {
 		this.destination = destination;
 	}
 
-	public Date getBookedDate() {
+	public String getBookedDate() {
 		return bookedDate;
 	}
 
-	public void setBookedDate(Date bookedDate) {
-		this.bookedDate = bookedDate;
+	public void setBookedDate() {
+		Calendar calendar = Calendar.getInstance();
+		String date =  calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1) + "/" + calendar.get(Calendar.YEAR);
+		this.bookedDate = date;
 	}
 
-	public Date getExpectedDate() {
-		return expectedDate;
-	}
-
-	public void setExpectedDate(Date expectedDate) {
-		this.expectedDate = expectedDate;
-	}
+	
 
 	public Customer getCustomer() {
 		return customer;

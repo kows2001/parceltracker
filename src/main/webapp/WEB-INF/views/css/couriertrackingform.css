@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+body {
+	background-image:
+		url("	https://www.metturtransports.com/images/banner_img1.jpg");
+	width: 100vw;
+	height: 100vh;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	
+}
+.label{
+	margin-left:100px;
+	color: #11116a;
+}
+
+.container {
+      margin-top: 150px;
+    margin-right: 61px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 400px;
+    float: right;
+}
+.col-25 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+  margin-left:25px;
+}
+
+.col-75 {
+  float: left;
+  width: 55%;
+  margin-top: -23px;
+  margin-left:233px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

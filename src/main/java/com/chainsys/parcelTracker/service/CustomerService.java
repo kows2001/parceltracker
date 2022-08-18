@@ -23,6 +23,10 @@ public class CustomerService {
 	public Customer insertCustomer(Customer cus) {
 		return customerRepo.save(cus);
 	}
+	
+	public Customer updateCustomer(Customer cus) {
+		return customerRepo.save(cus);
+	}
 
 	public Customer retriveDetails(int id) {
 		return customerRepo.findById(id);
@@ -32,10 +36,7 @@ public class CustomerService {
 		return customerRepo.findByEmailAndPassword(email, password);
 	}
 	
-	/*
-	 * public int getCustomerIdByPhoneNumber(long phno) { return
-	 * customerRepo.findCustomerIdByPhoneNumber(phno); }
-	 */
+	
 
 	
 }

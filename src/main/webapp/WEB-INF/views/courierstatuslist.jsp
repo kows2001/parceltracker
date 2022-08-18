@@ -7,14 +7,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Courier Registered Details</title>
+<style><%@include file="/WEB-INF/views/css/courierstatuslist.css"%>
+
+ </style>
 </head>
 <body>
-
+      <h2>STATUS UPDATE LIST</h2>
 	<div id="table root">
 		<table>
 			<thead>
 				<tr>
-				    <th>CourierReferenceNo</th>
+				    <th>Courier ReferenceNo</th>
 					<th>Status UpdateDate</th>
 					<th>CurrentPlace</th>
 					<th>checkInTime</th>
@@ -31,12 +34,16 @@
 						<td>${costatus.currentPlace}</td>
 						<td>${costatus.checkInTime}</td>
 						<td>${costatus.checkOutTime}</td>
-						<td>${ccostatus.courierStatus}</td>
+						<td>${costatus.courierStatus}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		         <a href="/courier/backtoregisteredlist">Back To Registered List</a>
+		<div  class ="back">
+		         <a href="/courier/courierlist"> <input
+				onclick="change()" type="button" value="Back"></input>
+			</a>
+		 </div>
 	</div>
 </body>
 </html>

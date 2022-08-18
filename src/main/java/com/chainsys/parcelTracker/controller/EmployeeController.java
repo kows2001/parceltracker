@@ -42,8 +42,10 @@ public class EmployeeController {
 	}
 	@PostMapping("/check")
 	public String checkingaccess(@ModelAttribute("admin") Employee employee) {
-	Employee admin  = employeeService.getEmployeeByRoleAndNameAndPassword(employee.getEmployeeRole(), employee.getEmployeeName(),employee.getEmployeePassword());
-		if(admin!=null) {
+		System.out.println("we" +employee.getEmployeeRole()+employee.getEmployeeName()+employee.getEmployeePassword());
+	Employee admin  = employeeService.getEmployeeRoleAndEmployeeNameAndEmployeePassword(employee.getEmployeeRole(), employee.getEmployeeName(),employee.getEmployeePassword());
+	System.out.println("admin: "+admin.getEmployeeId());
+		if(admin!= null) {
 		        return "redirect:/courier/courierlist";
 		        }
 		else return "invalid-customer-error";

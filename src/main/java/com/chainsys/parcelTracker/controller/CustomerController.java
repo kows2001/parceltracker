@@ -1,6 +1,5 @@
 package com.chainsys.parcelTracker.controller;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.chainsys.parcelTracker.dto.CustomerCourierDTO;
 import com.chainsys.parcelTracker.model.Customer;
-import com.chainsys.parcelTracker.model.Employee;
-import com.chainsys.parcelTracker.service.CourierService;
 import com.chainsys.parcelTracker.service.CustomerService;
-import com.chainsys.parcelTracker.service.EmployeeService;
 
 @Controller
 @RequestMapping("/customer")
@@ -43,7 +37,7 @@ public class CustomerController {
            return "signup-form";
 		}
 		else {
-			//theCus.setDateOfJoining();
+			theCus.setDateOfJoining();
 			customerService.insertCustomer(theCus);
 			return "redirect:/customer/customerlogin";
 		}
@@ -60,27 +54,56 @@ public class CustomerController {
 	
 	
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") Customer cus ) {
+	public String checkingAccess(@ModelAttribute("customer") Customer cus , Model model) {
 		Customer customer = customerService.getCustomerByEmailAndPassword(cus.getEmail(), cus.getPassword());
 		
 		if (customer != null) {
-			System.out.println("debug: sign in "+customer.getCustomerId() );
 			return "redirect:/customer/gotodashboard?customerId="+ customer.getCustomerId();
 		} else
-			return "invalid-customer-error";
-
+			model.addAttribute("result","Invalid EmailId and Password!!!");
+			 return  "customer-login-form";
 	}
 
 	@GetMapping("/gotodashboard")
-	public String goToTrackAndRegisterForm(@RequestParam("customerId") int id , Model model) {
+	public String goToDashBoard(@RequestParam("customerId") int id , Model model) {
 		model.addAttribute("customerId" , id);
 		return "dashboard";
 	}
+	
 
+	@GetMapping("/backtodashboard")
+	public String backToBackDashboard() {
+		return "dashboard";
+	}
 	
 	@GetMapping("/homePage")
 	public String goToHomePage() {
 		return "homePage";
 	}
+	
+	@GetMapping("/findcustomerbyid")
+	public String findCustomerById(@RequestParam("customerId") int id, Model model) {
+		Customer theCus = customerService.retriveDetails(id);
+		model.addAttribute("findcustomerbyid", theCus);
+		return "find-customer-byid";
+	}
+	
+	  @GetMapping("/customerupdateform") 
+	  public String showUpdateForm(@ModelAttribute("findcustomerbyid")Customer customer, Model model) {
+		  Customer customer1 = customerService.retriveDetails(customer.getCustomerId());
+	  model.addAttribute("updateCustomer", customer1); 
+	  return "customer-update-form"; 
+	  }
+	  
+	  @PostMapping("/customerupdate") 
+	  public String updateStatusDetail(@ModelAttribute("updateCustomer") Customer customer, Model model) {
+			/*
+			 * Customer cus = new Customer(); cus.setPassword(customer.getPassword());
+			 */
+		  customerService.updateCustomer(customer);
+			model.addAttribute("save","Changes Saved Successfully....");
+
+		 return "customer-update-form"; }
+	 
 
 }

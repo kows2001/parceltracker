@@ -16,8 +16,8 @@ public class CourierService {
 		return courierRepo.save(courier);
 	}
 	
-	public Iterable<Courier> getCourierDetails(){
-		Iterable<Courier> colist =  courierRepo.findAll();
+	public List<Courier> getCourierDetails(){
+		List<Courier> colist =  courierRepo.findAll();
 		return colist;
 	}
 	

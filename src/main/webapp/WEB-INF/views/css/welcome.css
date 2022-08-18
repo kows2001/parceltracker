@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+ .img{
+	
+    
+    margin-left:450px;
+}
+h2{
+	    margin-left: 500px;
+	    margin-top:-92px;
+	    color: #008000;
+}
+
+.container{
+	display:flex;
+
+	margin-top: 53px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 77px;
+}
+.container input[type="text"]{
+
+	
+	font-size: 30px;
+	border: none;
+	outline: none;
+	margin-right:144px;
+	border: none;
+    color: red;
+    font-weight: bold;
+}
+.container label{
+	color: red;
+	
+	font-weight:bold;
+	
+	font-size: 25px;
+    margin-left: 404px;
+}
+.back{
+	margin-left:700px;
+	margin-top:40px;
+}

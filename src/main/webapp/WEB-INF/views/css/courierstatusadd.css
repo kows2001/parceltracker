@@ -2,47 +2,50 @@
 * {
   box-sizing: border-box;
 }
-body {
-	background-image: url("https://1021sunrise.com/wp-content/uploads/2017/06/Courier-Service-1024x683.jpg");
+
+ body {
+	background-image: url("https://www.speedandsafe.com/Home_files/slide3-4_1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-
-.box {
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 5px 20px 50px #000;
-    margin: auto;
-    padding: 10px;
-   
-    float: center;
-    font-weight: 900;
-    float: left;
-    width: 454px;
-    height: 400px;
-    margin-left: 50px;
-    margin-top:88px;
+.container {
+	
+  
+  border-radius: 10px;
+   height: 519px;
+   box-shadow: 5px 2px 20px #000;
+   overflow: hidden;
+  padding: 20px;
+   font-weight: 900;
+   font-size:20px;
+  width:40%;
+  float:right;
+  margin-top: 55px;
+    margin-right: 201px;
+     color:white;
 }
 
 
-.col-25 {
+.col-1 {
   float: left;
   width: 30%;
   margin-top: 22px;
-  margin-left:22px;
-  font-size:19px;
+  margin-left:10px;
+  color:white;
 }
 
-.col-75 {
+.col-2 {
   float: left;
   width: 55%;
   margin-top: 22px;
+  margin-left:40px;
 }
 .row:after {
   content: "";
   display: table;
   clear: both;
+  height:10px;
 }
 .btn{
   
@@ -59,7 +62,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 9px 	#9400D3;
   margin-left:150px;
-   margin-top: 22px;
+   margin-top: 48px;
 }
 
 .btn:hover {background-color: 	#9400D3}
@@ -69,6 +72,12 @@ body {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-h1{
-	margin-left:436px;
+
+.img{
+	margin-left:50%;
+	
+	margin-top:4%
+}h1{
+	margin-left:500px;
+	color:white;
 }

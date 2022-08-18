@@ -41,7 +41,7 @@ public class Customer {
 	private String gender;
 
 	
-	private Date dateOfJoining;
+	private String dateOfJoining;
 
 	@Column(name = "email")
 //	@Email(message = "*Email is not valid")
@@ -135,17 +135,14 @@ public class Customer {
 		this.customerName = customerName;
 	}
 
-	public Date getDateOfJoining() {
+	public String getDateOfJoining() {
 		return dateOfJoining;
 	}
 
-	public void setDateOfJoining( Date dateOfJoining) {
-		/*
-		 * Calendar calendar = Calendar.getInstance(); String dateOfJoining =
-		 * (calendar.get(Calendar.MONTH)+1) + "/" + (calendar.get(Calendar.DATE)) + "/"
-		 * + calendar.get(Calendar.YEAR);
-		 */
-		this.dateOfJoining = dateOfJoining;
+	public void setDateOfJoining( ) {
+		Calendar calendar = Calendar.getInstance();
+		String date =  calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1) + "/" + calendar.get(Calendar.YEAR);
+		this.dateOfJoining = date;
 	}
 
 	public long getPhoneNumber() {

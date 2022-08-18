@@ -13,7 +13,7 @@ public interface CourierRepository extends CrudRepository<Courier, Integer>{
 	
 	Courier findById(int id);
 	
-	Iterable<Courier> findAll();
+	List<Courier> findAll();
 	
 	void deleteById(int id);
 	

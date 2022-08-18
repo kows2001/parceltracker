@@ -43,9 +43,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="employeeAddress"> Employee Address</label>
+					<label for="employeeEmail"> Employee Email</label>
 					<div>
-						<form:input path="employeeAddress" />
+						<form:input path="employeeEmail" />
 					</div>
 				</div>
 				<div>

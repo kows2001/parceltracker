@@ -29,7 +29,7 @@ public class CustomerCourierController {
 	  @GetMapping("/getcustomercourierlist") 
 	  public String getCustomerCourier(@RequestParam("customerId") int id ,Model model) {
 	  CustomerCourierDTO customerCourierdto = customerCourierService.getCourierList(id);
-	  model.addAttribute("getCustomer",customerCourierdto.getCustomerById());
+	//  model.addAttribute("getCustomer",customerCourierdto.getCustomerById());
 	  model.addAttribute("courierlist", customerCourierdto.getCourierList());
 	  return "customer-courier-list"; }
 	 

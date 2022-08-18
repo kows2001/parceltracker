@@ -6,25 +6,31 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style><%@include file="/WEB-INF/views/css/couriertrackingform.css"%>
+
+ </style>
 </head>
 <body>
-  <div id="root">
-		<div id="form">
+  <div class = "center">
+		<div class ="container">
 			<form action="courierStatusByRefNo"  >
-				<div>
-					<label for="courierReferenceNo">Enter Your Courier Reference Number</label>
+					<div class="label">
+						<label for="courierReferenceNo">TRACK YOUR ORDER</label>
+					</div>
 					
-					<div>
-						<%-- <form:input path="courierReferenceNo" /> --%>
+					<div class="row">
+					<div class="col-25">
 						<input type = "text" id = "courierReferenceNo" name = "courierReferenceNo"/>
 					</div>
-				</div>
-				
+			
+				<div class="col-75">
 				
 				<input type="submit" value = "track"/>
+				</div>
+				</div>
 			</form>
 			
-			<%-- <a href="/courierstatus/courierstatusupdate?courierReferenceNo=${co.courierReferenceNo}">Update Courier Status</a></td> --%>
+		
 		</div>
 	</div>
 </body>

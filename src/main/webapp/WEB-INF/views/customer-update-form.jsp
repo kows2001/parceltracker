@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<style><%@include file="/WEB-INF/views/css/signupform.css"%>
+<style><%@include file="/WEB-INF/views/css/customer-update-form.css"%>
 
  </style>
  <script type="text/javascript">
@@ -124,8 +124,8 @@
 
                    <h2>Get started with a free account</h2>
 	            <div class ="container">
-					<form:form action="newcustomer" method="post"
-						modelAttribute="newcus" name="form">
+					<form:form action="customerupdate" method="Post"
+						modelAttribute="updateCustomer" name="form">
 						
 							
 								<div class="row">
@@ -170,19 +170,8 @@
 									</div>
 								<form:errors path="email" cssClass="text-danger" />
 							</div>
-							 <div class="row">
-							<div class="col-25">
 							
-					<label for="password">Password</label>
-					</div>
-									<div class="col-75">
-										<form:input path="password"  type="password" 
-										title="password must begin with letter and contain atleast one number and must have atleast 8 characters"
-										pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
-										 placeholder="password" onblur="passwordCheck();"  id="password" name="password"/>
-									</div>
 							
-							</div>
 							<div class="row">
 							<div class="col-25">
 						<label for="phoneNumber">Phone Number</label>
@@ -216,21 +205,18 @@
 							</div>
 							</div>
 						    <div class="row">
-							<form:button class ="btn">SignUp</form:button>
+							<form:button class ="btn">Save</form:button>
 							
 						</div>
 					</form:form>
 					
 					</div>
-					 <div class="img">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1NJBlacRALrhl2wwfMxJ25RKixv0P3TMtEg&usqp=CAU.jpg" alt="W3Schools.com" width="440px"  height="430px">
-					</div> 
 					
-					<div  class="btn2">
-			<label> Already hava an account?</label> <a href="customerlogin"> <input
-				onclick="change()" type="button" value="Login"></input>
-			</a>
-		</div>
+					<div>
+					${save}</div>
+					
+					
+				
 				
 
 </body>

@@ -21,7 +21,7 @@ public interface EmployeeRepository  extends JpaRepository<Employee, Integer>{
 
 	List<Employee> findAll();
 
-	Employee  findByEmployeeRoleAndEmployeeNameAndEmployeePassword(String role, String employee_name, String password);
+	Employee  findByEmployeeRoleAndEmployeeNameAndEmployeePassword(String role, String employeeName, String password);
 	
 }
 

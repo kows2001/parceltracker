@@ -28,33 +28,29 @@ public class CourierController {
 		Courier theCourier = new Courier();
 		System.out.println("debug: CourierCountroler.showRegisterationForm " + id);
 		theCourier.setCustomerId(id);
+		
 		model.addAttribute("neworder", theCourier);
 		return "registeration-form";
 	}
 
 	@PostMapping("/neworder")
 	public String addneworder(@ModelAttribute("neworder") Courier theCourier  , Model model) {
+		
+		 theCourier.setBookedDate();
 		 Courier courier =courierservice.addCourierDetails(theCourier);
 		 int courierReferenceNo = courier.getCourierReferenceNo();
 		 
 		 Courier courierRef = new Courier();
-		System.out.println("hkjhiyiugu"+courierReferenceNo);
+		
 		
 		courierRef.setCourierReferenceNo(courierReferenceNo);
+		
 		model.addAttribute("courierReferenceNo", courierRef );
 		return "welcome";
 		
 		
 
 	}
-	
-	/*
-	 * @GetMapping("/getReferenceNo") public String
-	 * getReferenceNumber(@RequestParam("courierReferenceNo") int refNo, Model
-	 * model) { Courier courier = new Courier();
-	 * courier.setCourierReferenceNo(refNo); return "welcome"; }
-	 */
-	
 
 	@GetMapping("/courierlist")
 	public String registeredlist(Model model) {
