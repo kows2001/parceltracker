@@ -7,11 +7,33 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add New Employee</title>
+<link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
+
 <style><%@include file="/WEB-INF/views/css/courierstatusbyrefno.css"%>
 
  </style>
 </head>
+<body>
 
+ <nav>
+    <div class="btn1">
+			<button style="background-color: #033747;
+    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+		</div>	
+			
+		<div Class="logo">
+			<p>SMART EXPRESS</p>
+	</div>
+	
+		<ul>
+			<li><a href="/customer/signupform"> Home</a></li>
+			<li><a href="/customer/signupform"> Signup</a></li>
+			<li><a href="/customer/customerlogin"> login</a></li>
+			<li><a href="/employee/employeelogin"> admin</a></li>
+		</ul>
+	</nav>
+	
+ 
         <div class="container1">
         <div class="form">
             <form:form action=""  modelAttribute="courierstatusbyrefno">
@@ -63,15 +85,13 @@
 						<form:input path="courierStatus" readonly="true"/>
 					</div>
 				</div>
-				<a href="/customer/backtodashboard"> <input
-				onclick="change()" type="button" value="Back"></input>
-			</a>
-				 </form:form>
-				 </div>
-        </div>
+				
+       </form:form>
+       </div>
+	</div>			
        <div class="container">
       <div class="img">
-					<img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGFyY2VsJTIwZGVsaXZlcnl8ZW58MHx8MHx8&w=1000&q=80.jpg" alt="W3Schools.com" width="600px"  height="600px">
+					<img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGFyY2VsJTIwZGVsaXZlcnl8ZW58MHx8MHx8&w=1000&q=80.jpg" alt="W3Schools.com" width="550px"  height="450px">
 					</div> <div class="content">
     <h1>Making sure your parcel gets to you when you need it.</h1>
   </div>

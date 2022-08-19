@@ -17,7 +17,7 @@
 
 
    <a   href="/customer/findcustomerbyid?customerId=${customerId}">Profile</a>
-  <a   href="/courier/courierregister?customerId=${customerId}">Register</a>
+  <a   href="/courier/courierregister?customerId=${customerId}">Order</a>
   <a href="/courierstatus/trackingpage">Track Your Courier</a>
   <a href="/customercourier/getcustomercourierlist?customerId=${customerId}">Courier List</a>
 </div>

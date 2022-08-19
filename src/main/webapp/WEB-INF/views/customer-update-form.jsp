@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
 <style><%@include file="/WEB-INF/views/css/customer-update-form.css"%>
 
  </style>
@@ -13,7 +14,7 @@
  var customerNameCheck = function() {
 	 var nameRegex = new RegExp("^[a-zA-Z\\s]{3,20}$");
 	 if(!document.form.customerName.value.match(nameRegex)){
-			if(alert("Name can't be empty or must contain only alphabets /n *length should be 3 to 20")){ 
+			if(alert("Name can't be empty or must contain only alphabets ")){ 
 				 document.form.customerName.focus();
 		    }
 			else
@@ -25,7 +26,7 @@
    
 }
  var gender = function() {
-	 if(document.form.gender.value == ""){
+	 if(!document.form.gender.value == ""){
 			if(alert("Gender cannot be blank")){ 
 				 document.form.gender.focus();
 		    }
@@ -107,7 +108,12 @@
 </head>
 <body >    
              
-   <nav>
+    <nav>
+    <div class="btn1">
+			<button style="background-color: #033747;
+    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+		</div>	
+			
 		<div Class="logo">
 			<p>SMART EXPRESS</p>
 	</div>
@@ -118,10 +124,12 @@
 			<li><a href="/customer/customerlogin"> login</a></li>
 			<li><a href="/employee/employeelogin"> admin</a></li>
 		</ul>
-	</nav> 
+	</nav>
 	
-               	<div class="save">
-					${save}</div>
+ 
+	
+               	<h2 id ="save">
+					${save}</h2> 
 					
 
  <div class ="container">

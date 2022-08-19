@@ -6,8 +6,58 @@ body {
 	background-image: url("https://1021sunrise.com/wp-content/uploads/2017/06/Courier-Service-1024x683.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+     width: 100vw;
+    height: 100vh;
 }
 
+
+nav {
+	width: 100%;
+	height: 80px;
+	Line-height: 80px;
+	margin-top:-20px;
+	margin-left:-8px;
+	padding: 0px 100px;
+	position: fixed;
+	background-image: linear-gradient(#033747, #012733);
+}
+
+nav .logo p {
+	font-size: 30px;
+	font-weight: bold;
+	float: left;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	cursor: pointer;
+	margin-top: -84px;
+    margin-left: -32px;
+
+}
+
+nav ul {
+	float: right;
+	margin-top:-81px;
+}
+
+nav li {
+	display: inline-block;
+	list-style: none;
+}
+
+nav li a {
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 10px 30px;
+	color: white;
+	text-decoration:none;
+}
+
+nav li a:hover {
+	color: #ff8c69;
+}
+
+	
 
 .box {
     overflow: hidden;
@@ -22,7 +72,7 @@ body {
     width: 454px;
     height: 400px;
     margin-left: 50px;
-    margin-top:88px;
+    margin-top:8px;
 }
 
 
@@ -71,4 +121,9 @@ body {
 }
 h1{
 	margin-left:436px;
+	padding-top:92px;
+}
+
+.btn1{
+	margin-left:-85px;
 }

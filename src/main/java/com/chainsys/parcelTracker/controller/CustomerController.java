@@ -98,7 +98,6 @@ public class CustomerController {
 	  @PostMapping("/customerupdate") 
 	  public String updateStatusDetail(@ModelAttribute("updateCustomer") Customer customer, Model model) {
 		  customer.setDateOfJoining();
-			System.out.println("fg"+customer.getDateOfJoining());
 		  customerService.updateCustomer(customer);
 			model.addAttribute("save","Changes Saved Successfully....");
 

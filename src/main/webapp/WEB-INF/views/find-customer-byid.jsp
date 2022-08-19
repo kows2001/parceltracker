@@ -2,18 +2,27 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 <style><%@include file="/WEB-INF/views/css/findcustomerbyid.css"%>
 
  </style>
 </head>
-<body class = "container">
+<link href='https://css.gg/arrow-left-o.css' rel='stylesheet'><body class = "container">
 	
+	  
+         
 	<div class="sidenav">
+	 <div class="btn1">
+			<button style="background-color: #033747;
+    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+			
+			</div> 
 	<div class="img">
 		<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/2048px-Circle-icons-profile.svg.png" width="200px" height="200px">
 		</div>
@@ -109,16 +118,8 @@
 				<form:button >Edit</form:button>
 				</div>
 			</form:form>
-<!-- <div class="btn">
-			<a href="/customer/customerupdate?customerId=" > <input
-				onclick="change()" type="button" value="Edit"></input>
-			</a>
-			</div> -->
-			<div class="btn1">
-			<a href="/customer/gotodashboard?customerId=" > <input
-				onclick="change()" type="button" value="Back"></input>
-			</a>
-			</div>
+
+			
 		</div>
 	</div>
 </body>

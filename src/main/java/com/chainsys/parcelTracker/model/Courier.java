@@ -26,11 +26,9 @@ public class Courier {
 	private int courierReferenceNo;
  
 	@Column(name = "Customer_id")
-	@NotBlank(message = "*Please enter customer id")
 	private int customerId;
 
 	@Column(name = "Courier_type")
-    @NotBlank(message = "*Select courier type")
 	private String courierType;
 
 	@Column(name = "Weight")

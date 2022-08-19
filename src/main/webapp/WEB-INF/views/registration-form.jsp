@@ -7,66 +7,98 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
 <style><%@include file="/WEB-INF/views/css/registration-form.css"%>
 
  </style>
+ 
 <script>
+function calculation() {
+	var courierType = document.getElementById("courierType").value;
+	var courierWeight = document.getElementById("courierWeight").value;
 
-/* var sourceCheck = function() {
-	 if(!document.form.source.value ==" "){
-			if(alert("Please enter your from address)){ 
-				 document.form.source.focus();
-		    }
-			else
-				document.activeElement.blur();
+	var val;
+	if (courierType == "Document") {
+		val = parseInt(courierWeight) * 10;
+	} else if (courierType == "Metal") {
+		val = parseInt(courierWeight) * 5;
+	} else if (courierType == "Glass") {
+		val = parseInt(courierWeight) * 20;
+	} else if (courierType == "Plastic") {
+		val = parseInt(courierWeight) * 15;
+	} else {
+		val = null;
+	}
+	document.getElementById("courierCost").value = val;
+} 
+
+var destinationCheck = function() {
+	if (document.form.destination.value == "") {
+		if (alert("Please enter your to address")) {
+			document.form.destination.focus();
 		}
- else{
-     return false;
- } 
+		else
+document.activeElement.blur();
+	}
+	else {
+		return false;
+	}
 
 }
-var destinationCheck = function() {
-	 if(!document.form.destination.value == " "){
-			if(alert("Please enter weight in Kg")){ 
-				 document.form.destination.focus();
-		    }
-			else
-				document.activeElement.blur();
-		}
- else{
-     return false;
- } 
 
-}  */
-
-function calculation(){
-	 var courierType = document.getElementById("courierType").value;
-	 var courierWeight = document.getElementById("courierWeight").value;
+var sourceCheck = function() {
+	if (document.form.source.value == "") {
+		if (alert("Please enter your from address")){ 
+				 document.form.source.focus();
+	}
+	else
+		document.activeElement.blur();
+}
+ else {
+	return false;
+} 
 	
-	 var val;
-	 if(courierType=="Document"){
-		 val=parseInt(courierWeight)*10;
-	 }else if(courierType=="Metal"){
-		val = parseInt(courierWeight)*5;
-	 }else if(courierType=="Glass"){
-		 val=parseInt(courierWeight)*20;
-	 }else if(courierType=="Plastic"){
-		 val=parseInt(courierWeight)*15;
-	 }else {
-		 val=null;
-	 }
-	 document.getElementById("courierCost").value = val;
-	 }
+}
 
+var courierWeightCheck = function() {
+	var weightRegex = new RegExp("^[0-9]{1,4}$")
+	if (!document.form.courierWeight.value.match(weightRegex)) {
+		if (alert("Please enter weight in kg")){ 
+				 document.form.courierWeight.focus();
+	}
+	else
+		document.activeElement.blur();
+}
+ else {
+	return false;
+} 
 
-
+}
 
 </script>
- 
- 
-
 </head>
 <body>
+
+ <nav>
+    <div class="btn1">
+			<button style="background-color: #033747;
+    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+		</div>	
+			
+		<div Class="logo">
+			<p>SMART EXPRESS</p>
+	</div>
+	
+		<ul>
+			<li><a href="/customer/signupform"> Home</a></li>
+			<li><a href="/customer/signupform"> Signup</a></li>
+			<li><a href="/customer/customerlogin"> login</a></li>
+			<li><a href="/employee/employeelogin"> admin</a></li>
+		</ul>
+	</nav>
+	
+ 
+	
 	 <h1> Get Start A New Order With Us</h1>
 	<div id="form" class ="box">
 
@@ -91,7 +123,7 @@ function calculation(){
 					<label for="courierType">Courier type</label>
 				</div>
 				<div class="col-75">
-					<form:select  path="courierType" name = "courierType" onchange = "calculation()" required = "true">
+					<form:select  path="courierType"  name = "courierType" onchange = "calculation()" required = "true">
 					 <form:option value="Document">Select courier type</form:option>
 					 <form:option value="Document">Document</form:option>
 					  <form:option value="Metal">Metal</form:option>
@@ -110,10 +142,10 @@ function calculation(){
 
 				</div>
 				<div class="col-75">
-					<form:input path="courierWeight"  placeholder = "Weight in Kg" required = "true" name = "courierWeight" onchange = "calculation()" 
+					<form:input path="courierWeight"  placeholder = "Weight in Kg" required = "true" onblur="courierWeightCheck();" name = "courierWeight" onchange = "calculation()" 
 					id ="courierWeight" 
 					title="provide Weight in Kg"
-					pattern="\d{1,4}" />
+					pattern="^[0-9]{1,4}$" />
 				</div>
 			</div>
 

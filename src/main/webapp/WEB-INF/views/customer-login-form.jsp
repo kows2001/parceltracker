@@ -28,9 +28,9 @@
    
 }
  var passwordCheck = function() {
-	 if(!document.form.email.value==""){
+	 if(document.form.password.value==""){
 			if(alert("* please enter valid password")){ 
-				 document.form.email.focus();
+				 document.form.password.focus();
 		    }
 			else
 				document.activeElement.blur();
@@ -58,13 +58,8 @@
 			<li><a href="/employee/employeelogin"> admin</a></li>
 		</ul>
 	</nav>
-	
-	
-     
-  
-    
-                             
-       <div>
+	<main>                            
+       <div class="content">
 		 <h1> Fastest, safest and best delivery for your goods</h1>   
 		
 	</div>	                       
@@ -118,6 +113,6 @@
 	
 	
 	</div>
-	
+	</main> 
 </body>
 </html>

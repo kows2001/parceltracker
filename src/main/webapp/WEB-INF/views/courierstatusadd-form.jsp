@@ -7,6 +7,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Courierr</title>
+<link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
+
 <style><%@include file="/WEB-INF/views/css/courierstatusadd.css"%>
 
  </style>
@@ -93,6 +95,10 @@ else{
 </script>
 </head>
 <body>
+  <div class="btn1">
+			<button style="background-color: #033747;
+    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+		</div>
    <div class = "center">
    <h1> Courier Status Update</h1>
 		<div class ="container">

@@ -6,11 +6,33 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
+
 <style><%@include file="/WEB-INF/views/css/couriertrackingform.css"%>
 
  </style>
 </head>
 <body>
+
+ <nav>
+    <div class="btn1">
+			<button style="background-color: #033747;
+    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+		</div>	
+			
+		<div Class="logo">
+			<p>SMART EXPRESS</p>
+	</div>
+	
+		<ul>
+			<li><a href="/customer/signupform"> Home</a></li>
+			<li><a href="/customer/signupform"> Signup</a></li>
+			<li><a href="/customer/customerlogin"> login</a></li>
+			<li><a href="/employee/employeelogin"> admin</a></li>
+		</ul>
+	</nav>
+	
+ 
   <div class = "center">
 		<div class ="container">
 			<form action="courierStatusByRefNo"  >
@@ -20,7 +42,7 @@
 					
 					<div class="row">
 					<div class="col-25">
-						<input type = "text" id = "courierReferenceNo" name = "courierReferenceNo"/>
+						<input type = "text" id = "courierReferenceNo" name = "courierReferenceNo" />
 					</div>
 			
 				<div class="col-75">

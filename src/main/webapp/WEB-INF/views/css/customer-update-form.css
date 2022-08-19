@@ -7,6 +7,8 @@
 	background-image: url("https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40659/FreevectorPurple-BackgroundAS0621_generated.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+     width: 100vw;
+    height: 100vh;
 }
  nav {
 	width: 100%;
@@ -27,13 +29,14 @@ nav .logo p {
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 	cursor: pointer;
-	margin-top:1px;
+	margin-top: -84px;
+    margin-left: -32px;
 
 }
 
 nav ul {
 	float: right;
-	margin-top:7px;
+	margin-top:-90px;
 }
 
 nav li {
@@ -54,8 +57,8 @@ nav li a:hover {
 }
 
 .container {
-     margin-top: 100px;
-    margin-left: 386px;
+    margin-top: 2px;
+    margin-left: 400px;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -111,6 +114,11 @@ nav li a:hover {
   transform: translateY(4px);
 }
 
-.save{
-	
+#save{
+	padding-top: 99px;
+    margin-left: 524px;
+    color: green;
+}
+.btn1{
+	margin-left:-85px;
 }

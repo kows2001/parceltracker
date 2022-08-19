@@ -26,11 +26,10 @@ public class CourierController {
 	@GetMapping("/courierregister")
 	public String showRegisterForm( @RequestParam("customerId") int id,Model model) {
 		Courier theCourier = new Courier();
-		System.out.println("debug: CourierCountroler.showRegisterationForm " + id);
 		theCourier.setCustomerId(id);
 		
 		model.addAttribute("neworder", theCourier);
-		return "registeration-form";
+		return "registration-form";
 	}
 
 	@PostMapping("/neworder")

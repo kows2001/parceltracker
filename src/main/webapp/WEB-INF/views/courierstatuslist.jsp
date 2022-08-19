@@ -7,11 +7,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Courier Registered Details</title>
+<link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
+
 <style><%@include file="/WEB-INF/views/css/courierstatuslist.css"%>
 
  </style>
 </head>
 <body>
+<nav>
+    <div class="btn1">
+			<button style="background-color: #033747;
+    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+		</div>	
+			
+		<div Class="logo">
+			<p>SMART EXPRESS</p>
+	</div>
+	
+		<ul>
+			<li><a href="/customer/signupform"> Home</a></li>
+			<li><a href="/customer/signupform"> Signup</a></li>
+			<li><a href="/customer/customerlogin"> login</a></li>
+			<li><a href="/employee/employeelogin"> admin</a></li>
+		</ul>
+	</nav>
       <h2>STATUS UPDATE LIST</h2>
 	<div id="table root">
 		<table>
