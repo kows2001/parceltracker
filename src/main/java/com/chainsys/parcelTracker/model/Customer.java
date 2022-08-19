@@ -31,40 +31,27 @@ public class Customer {
 	private int customerId;
 
 	@Column(name = "name")
-//	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
-//	@NotBlank(message = "*Name is required")
-//	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid  name")
 	private String customerName;
 
 	@Column(name = "gender")
-	/* @NotBlank(message = "*Gender is required") */
 	private String gender;
 
 	
 	private String dateOfJoining;
 
 	@Column(name = "email")
-//	@Email(message = "*Email is not valid")
-//	@NotBlank(message = "*Please enter email")
 	private String email;
 
 	@Column(name = "password")
-//	@Size(max = 20, min = 8, message = "*Password length should be 8 to 20")
-//	@NotBlank(message = "*Password can't be Empty")
-//	@Pattern(regexp = "^(?=.*[a-zA-Z\\d].*)[a-zA-Z\\d!@#$%&*]\\w{8,20}$", message = "*Enter valid password ")
 	private String password;
 
 	
 	private long phoneNumber;
 
 	@Column(name = "city")
-//	@NotBlank(message = "*Please select city")
-//	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	private String city;
 
 
-//	@NotBlank(message = "*please select state")
-//	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	@Column(name = "state")
 	private String state;
 

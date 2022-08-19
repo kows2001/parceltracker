@@ -1,6 +1,5 @@
 package com.chainsys.parcelTracker.controller;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.parcelTracker.model.Courier;
-import com.chainsys.parcelTracker.model.CourierStatus;
-import com.chainsys.parcelTracker.model.Customer;
 import com.chainsys.parcelTracker.service.CourierService;
-import com.chainsys.parcelTracker.service.CourierStatusService;
 
 @Controller
 @RequestMapping("/courier")

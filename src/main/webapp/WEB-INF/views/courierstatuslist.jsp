@@ -17,7 +17,7 @@
 <nav>
     <div class="btn1">
 			<button style="background-color: #033747;
-    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+    color: white;" onclick="history.back()"><em class="gg-arrow-left-o"></em></button>
 		</div>	
 			
 		<div Class="logo">
@@ -34,6 +34,7 @@
       <h2>STATUS UPDATE LIST</h2>
 	<div id="table root">
 		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 				    <th>Courier ReferenceNo</th>

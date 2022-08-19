@@ -40,7 +40,8 @@
 	<br>
 	<br>
 	<div class="table">
-		<table  >
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 				    <th>CUSTOMER ID</th>
