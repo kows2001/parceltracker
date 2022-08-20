@@ -1,4 +1,9 @@
 @charset "ISO-8859-1";
+
+body{
+	background-image: linear-gradient(#033747, #012733);
+}
+
 .sidenav {
   height: 100%;
   width: 320px;
@@ -22,8 +27,25 @@
  
 }
 
+.sidenav a:hover{
+	color: #ff8c69;
+}
+
 .img{
-	margin-left:50%;
+	float:right;
+}
+
+.img .content{
 	
-	margin-top:4%
+  
+      position: absolute;
+    background: rgb(0, 0, 0);
+    color: #e71e1e;
+    background-color: white;
+    opacity: 0.9;
+    width: 470px;
+    padding: 23px;
+    margin-left: 607px;
+    /* float: right; */
+    margin-top: -118px;
 }

@@ -22,7 +22,7 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 
-	@SuppressWarnings("unused")
+
 	@Autowired
 	private static final String SIGNUPFORM="signup-form";
 
@@ -30,14 +30,14 @@ public class CustomerController {
 	public String showCustomerForm(Model model) {
 		Customer theCus = new Customer();
 		model.addAttribute("newcus", theCus);
-		return "SIGNUPFORM";
+		return SIGNUPFORM;
 	}
 
 	@PostMapping("/newcustomer")
 	public String addNewCus(@Valid @ModelAttribute("newcus") Customer theCus, Errors error) {
 		if(error.hasErrors()) {
 			
-           return "SIGNUPFORM";
+           return SIGNUPFORM;
 		}
 		else {
 			

@@ -55,10 +55,7 @@ public class CourierController {
 	}
     
 	 
-	@GetMapping("/backtoregisteredlist")
-	public String redirectToRegisteredList() {
-		return "redirect:/courier/courierlist";
-	}
+	
 
 
 }

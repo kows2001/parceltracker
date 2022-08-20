@@ -16,8 +16,8 @@
 <body>
 <nav>
     <div class="btn1">
-			<button style="background-color: #033747;
-    color: white;" onclick="history.back()"><em class="gg-arrow-left-o"></em></button>
+		<a href="/courier/courierlist"><button style="background-color: #033747;
+    color: white;" ><em class="gg-arrow-left-o"></em></button></a>	
 		</div>	
 			
 		<div Class="logo">
@@ -59,11 +59,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<div  class ="back">
-		         <a href="/courier/courierlist"> <input
-				onclick="change()" type="button" value="Back"></input>
-			</a>
-		 </div>
+		
 	</div>
 </body>
 </html>
