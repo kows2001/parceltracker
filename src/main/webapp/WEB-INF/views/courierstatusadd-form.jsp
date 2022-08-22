@@ -113,10 +113,10 @@ else{
 				</div>
 				<div class="row">
 							<div class="col-1">
-					<label for="courierStatus">Courier Status</label>
+					<label for="status">Courier Status</label>
 					</div>
 					<div class="col-2">
-						<form:input path="courierStatus" title="* please enter only alphabets" 
+						<form:input path="status" title="* please enter only alphabets" 
 						pattern="^[A-Za-z]+$"  required="true"  onblur="courierStatusCheck();"  name="courierStatus" id="courierStatus"/>
 					</div>
 				</div>

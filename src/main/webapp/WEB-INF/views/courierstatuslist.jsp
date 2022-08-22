@@ -54,7 +54,7 @@
 						<td>${costatus.currentPlace}</td>
 						<td>${costatus.checkInTime}</td>
 						<td>${costatus.checkOutTime}</td>
-						<td>${costatus.courierStatus}</td>
+						<td>${costatus.status}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

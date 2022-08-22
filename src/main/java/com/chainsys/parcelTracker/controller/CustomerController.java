@@ -1,5 +1,7 @@
 package com.chainsys.parceltracker.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,18 +59,21 @@ public class CustomerController {
 	
 	
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") Customer cus , Model model) {
+	public String checkingAccess(@ModelAttribute("customer") Customer cus , Model model, HttpSession session) {
 		Customer customer = customerService.getCustomerByEmailAndPassword(cus.getEmail(), cus.getPassword());
 		
 		if (customer != null) {
+			//session.setAttribute("customerId", cus.getCustomerId());
 			return "redirect:/customer/gotodashboard?customerId="+ customer.getCustomerId();
+			//return "redirect:/customer/gotodashboard";
+
 		} else
 			model.addAttribute("result","Invalid EmailId and Password!!!");
 			 return  "customer-login-form";
 	}
 
 	@GetMapping("/gotodashboard")
-	public String goToDashBoard(@RequestParam("customerId") int id , Model model) {
+	public String goToDashBoard(@RequestParam("customerId") int id, Model model) {
 		model.addAttribute("customerId" , id);
 		return "dashboard";
 	}

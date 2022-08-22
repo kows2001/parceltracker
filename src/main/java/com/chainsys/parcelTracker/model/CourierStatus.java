@@ -30,7 +30,6 @@ public class CourierStatus {
 	private String status;
 	
 	
-	
 	public int getCourierReferenceNo() {
 		return courierReferenceNo;
 	}
@@ -75,9 +74,11 @@ public class CourierStatus {
 		return status;
 	}
 
-	public void setStatus(String courierStatus) {
-		this.status = courierStatus;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
+	
+	
 	
 }
