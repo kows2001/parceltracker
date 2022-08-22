@@ -17,7 +17,7 @@ public interface CourierRepository extends CrudRepository<Courier, Integer>{
 	
 	void deleteById(int id);
 	
-	List<Courier> findByCustomerId(int customer_id);
+	List<Courier> findByCustomerId(int customerId);
 	
 	
 

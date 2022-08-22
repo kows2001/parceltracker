@@ -15,8 +15,7 @@ public class CourierService {
 	}
 	
 	public List<Courier> getCourierDetails(){
-		List<Courier> colist =  courierRepo.findAll();
-		return colist;
+		return courierRepo.findAll();
 	}
 	
 }

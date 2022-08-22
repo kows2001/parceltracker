@@ -70,7 +70,6 @@ table{
 
 th{
   padding: 20px 15px;
-  text-align: left;
   font-weight: 500;
   font-size: 16px;
   color: white;
@@ -95,6 +94,3 @@ body{
 	margin-left:-85px;
 }
 
-h1{
-	padding-top:97px;
-}

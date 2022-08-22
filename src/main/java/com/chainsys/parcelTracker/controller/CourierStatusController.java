@@ -33,7 +33,7 @@ public class CourierStatusController {
 
 		CourierStatus costatus = new CourierStatus();
 		costatus.setCourierReferenceNo(courierRefNo);
-		costatus.setCourierStatus("Booked");
+		costatus.setStatus("Booked");
 		model.addAttribute("addstatus", costatus);
 		return "courierstatusadd-form";
 	}
