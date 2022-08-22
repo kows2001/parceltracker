@@ -90,7 +90,7 @@ var courierWeightCheck = function() {
 	</div>
 	
 		<ul>
-			<li><a href="/customer/signupform"> Home</a></li>
+			<li><a href="/customer/homePage"> Home</a></li>
 			<li><a href="/customer/signupform"> Signup</a></li>
 			<li><a href="/customer/customerlogin"> login</a></li>
 			<li><a href="/employee/employeelogin"> admin</a></li>

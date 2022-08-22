@@ -18,14 +18,14 @@ public class CustomerCourierService {
 	@Autowired
 	CourierRepository courierRepo;
 	
-	public CustomerCourierDTO getCourierList(int customer_id) {
-		Customer cus = customerRepo.findById(customer_id);
+	public CustomerCourierDTO getCourierList(int customerId) {
+		Customer cus = customerRepo.findById(customerId);
 		CustomerCourierDTO dto = new CustomerCourierDTO();
 		dto.setCustomer(cus);
-		List<Courier> courier = courierRepo.findByCustomerId(customer_id);
+		List<Courier> courier = courierRepo.findByCustomerId(customerId);
 		Iterator<Courier> iterator = courier.iterator();
 		while (iterator.hasNext())
-			dto.addCourierList((Courier) iterator.next());
+			dto.addCourierList( iterator.next());
 
 		return dto;
 	}

@@ -16,7 +16,7 @@
   <nav>
     <div class="btn1">
 			<button style="background-color: #033747;
-    color: white;" onclick="history.back()"><i class="gg-arrow-left-o"></i></button>
+    color: white;" onclick="history.back()"><em class="gg-arrow-left-o"></em></button>
 		</div>	
 			
 		<div Class="logo">
@@ -24,7 +24,7 @@
 	</div>
 	
 		<ul>
-			<li><a href="/customer/signupform"> Home</a></li>
+			<li><a href="/customer/homePage"> Home</a></li>
 			<li><a href="/customer/signupform"> Signup</a></li>
 			<li><a href="/customer/customerlogin"> login</a></li>
 			<li><a href="/employee/employeelogin"> admin</a></li>

@@ -27,7 +27,7 @@ public class CourierStatus {
 	private String checkOutTime;
 	
 	@Column(name = "status")
-	private String courierStatus;
+	private String status;
 	
 	
 	
@@ -71,12 +71,12 @@ public class CourierStatus {
 		this.checkOutTime = checkOutTime;
 	}
 
-	public String getCourierStatus() {
-		return courierStatus;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setCourierStatus(String courierStatus) {
-		this.courierStatus = courierStatus;
+	public void setStatus(String courierStatus) {
+		this.status = courierStatus;
 	}
 
 	

@@ -59,8 +59,6 @@ h2{
 }
 
 .container{
-	display:flex;
-
 	margin-top: 53px;
     display: flex;
     justify-content: space-between;
@@ -73,7 +71,6 @@ h2{
 	border: none;
 	outline: none;
 	margin-right:144px;
-	border: none;
     color: red;
     font-weight: bold;
 }

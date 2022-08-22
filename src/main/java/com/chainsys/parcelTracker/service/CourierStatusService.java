@@ -16,13 +16,11 @@ public class CourierStatusService {
 		}
 		
 		public Iterable<CourierStatus> getCourierDetails(){
-			Iterable<CourierStatus> colist =  courierStatusRepo.findAll();
-			return colist;
+			return courierStatusRepo.findAll();
 		}
 		
 		public CourierStatus findDetailsByRefId(int id) {
-			CourierStatus courierStatusDetails = courierStatusRepo.findById(id);
-			return courierStatusDetails;
+			return  courierStatusRepo.findById(id);
 			
 		}
 
