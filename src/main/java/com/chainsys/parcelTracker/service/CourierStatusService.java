@@ -1,14 +1,10 @@
-package com.chainsys.parcelTracker.service;
+package com.chainsys.parceltracker.service;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.chainsys.parcelTracker.dao.CourierRepository;
-import com.chainsys.parcelTracker.dao.CourierStatusRepository;
-import com.chainsys.parcelTracker.model.Courier;
-import com.chainsys.parcelTracker.model.CourierStatus;
+import com.chainsys.parceltracker.dao.CourierStatusRepository;
+import com.chainsys.parceltracker.model.CourierStatus;
 
 @Service
 public class CourierStatusService {

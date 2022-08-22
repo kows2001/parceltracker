@@ -1,4 +1,4 @@
-package com.chainsys.parcelTracker.controller;
+package com.chainsys.parceltracker.controller;
 
 import javax.validation.Valid;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.parcelTracker.model.Customer;
-import com.chainsys.parcelTracker.service.CustomerService;
+import com.chainsys.parceltracker.model.Customer;
+import com.chainsys.parceltracker.service.CustomerService;
 
 @Controller
 @RequestMapping("/customer")

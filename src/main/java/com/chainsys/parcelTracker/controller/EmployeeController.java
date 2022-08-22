@@ -1,4 +1,4 @@
-package com.chainsys.parcelTracker.controller;
+package com.chainsys.parceltracker.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.chainsys.parcelTracker.model.Employee;
-import com.chainsys.parcelTracker.service.EmployeeService;
+import com.chainsys.parceltracker.model.Employee;
+import com.chainsys.parceltracker.service.EmployeeService;
 
 
 @Controller
@@ -42,13 +42,11 @@ public class EmployeeController {
 	}
 	@PostMapping("/check")
 	public String checkingaccess(@ModelAttribute("admin") Employee employee) {
-		System.out.println("we" +employee.getEmployeeRole()+employee.getEmployeeName()+employee.getEmployeePassword());
 	Employee admin  = employeeService.getEmployeeRoleAndEmployeeNameAndEmployeePassword(employee.getEmployeeRole(), employee.getEmployeeName(),employee.getEmployeePassword());
-	System.out.println("admin: "+admin.getEmployeeId());
 		if(admin!= null) {
 		        return "redirect:/courier/courierlist";
 		        }
-		else return "invalid-customer-error";
+		else return "redirect:/employee/employeelogin";
 			
 		}
 	}

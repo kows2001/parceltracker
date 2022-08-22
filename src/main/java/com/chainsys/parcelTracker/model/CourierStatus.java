@@ -1,4 +1,4 @@
-package com.chainsys.parcelTracker.model;
+package com.chainsys.parceltracker.model;
 
 
 import java.sql.Date;

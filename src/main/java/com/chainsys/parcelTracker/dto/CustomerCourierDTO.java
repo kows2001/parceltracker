@@ -1,12 +1,10 @@
-package com.chainsys.parcelTracker.dto;
+package com.chainsys.parceltracker.dto;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.chainsys.parcelTracker.model.Courier;
-import com.chainsys.parcelTracker.model.Customer;
+import com.chainsys.parceltracker.model.Courier;
+import com.chainsys.parceltracker.model.Customer;
 
 public class CustomerCourierDTO {
 	

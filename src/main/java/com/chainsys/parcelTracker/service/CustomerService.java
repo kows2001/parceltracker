@@ -1,17 +1,10 @@
-package com.chainsys.parcelTracker.service;
+package com.chainsys.parceltracker.service;
 
-import java.util.Iterator;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.chainsys.parcelTracker.dao.CourierRepository;
-import com.chainsys.parcelTracker.dao.CustomerRepository;
-import com.chainsys.parcelTracker.dto.CustomerCourierDTO;
-import com.chainsys.parcelTracker.model.Courier;
-import com.chainsys.parcelTracker.model.Customer;
-import com.chainsys.parcelTracker.model.Employee;
+import com.chainsys.parceltracker.dao.CustomerRepository;
+import com.chainsys.parceltracker.model.Customer;
 
 @Service
 public class CustomerService {

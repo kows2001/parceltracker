@@ -1,10 +1,10 @@
-package com.chainsys.parcelTracker.service;
+package com.chainsys.parceltracker.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.parcelTracker.dao.EmployeeRepository;
-import com.chainsys.parcelTracker.model.Employee;
+import com.chainsys.parceltracker.dao.EmployeeRepository;
+import com.chainsys.parceltracker.model.Employee;
 @Service
 public class EmployeeService {
     @Autowired

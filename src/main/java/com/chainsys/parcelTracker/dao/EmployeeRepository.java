@@ -1,17 +1,13 @@
-package com.chainsys.parcelTracker.dao;
+package com.chainsys.parceltracker.dao;
 
 import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import com.chainsys.parcelTracker.model.Customer;
-import com.chainsys.parcelTracker.model.Employee;
+import com.chainsys.parceltracker.model.Employee;
 
 @Repository
 public interface EmployeeRepository  extends JpaRepository<Employee, Integer>{
-//	
+	
 	
 	Employee findById(int id);
 

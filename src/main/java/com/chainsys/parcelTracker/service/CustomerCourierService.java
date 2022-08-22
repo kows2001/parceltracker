@@ -1,18 +1,15 @@
-package com.chainsys.parcelTracker.service;
+package com.chainsys.parceltracker.service;
 
 import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.chainsys.parcelTracker.dao.CourierRepository;
-import com.chainsys.parcelTracker.dao.CustomerRepository;
-import com.chainsys.parcelTracker.dto.CustomerCourierDTO;
-import com.chainsys.parcelTracker.model.Courier;
-import com.chainsys.parcelTracker.model.Customer;
+import com.chainsys.parceltracker.dao.CourierRepository;
+import com.chainsys.parceltracker.dao.CustomerRepository;
+import com.chainsys.parceltracker.dto.CustomerCourierDTO;
+import com.chainsys.parceltracker.model.Courier;
+import com.chainsys.parceltracker.model.Customer;
 @Service
 public class CustomerCourierService {
 	
@@ -32,9 +29,5 @@ public class CustomerCourierService {
 
 		return dto;
 	}
-	/*
-	 * public int getCustomerIdByPhoneNumber(long phno) { return
-	 * customerRepo.findCustomerIdByPhoneNumber(phno); }
-	 */
-	 
+	
 }

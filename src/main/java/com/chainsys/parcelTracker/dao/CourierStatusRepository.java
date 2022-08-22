@@ -1,12 +1,7 @@
-package com.chainsys.parcelTracker.dao;
-
-import java.util.List;
-
+package com.chainsys.parceltracker.dao;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import com.chainsys.parcelTracker.model.Courier;
-import com.chainsys.parcelTracker.model.CourierStatus;
+import com.chainsys.parceltracker.model.CourierStatus;
 @Repository
 public interface CourierStatusRepository extends CrudRepository<CourierStatus, Integer>{
 	
