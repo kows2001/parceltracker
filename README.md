@@ -32,7 +32,7 @@ The Parcel Tracking Management System is designed to monitor and track the real-
                                        -LOGOUT
                                        
       
-How to Use the Project
+# How to Use the Project
 1.Login
 Start by logging in to the Parcel Tracker platform using your registered email and password.
 
@@ -54,12 +54,16 @@ Status updates made by the admin are reflected instantly for the customer.
 # Technical Features
 1.Database Connectivity
   Integrated with Oracle Database for robust data storage and retrieval.
+  
 2.Relational Data Handling
   Implements One-to-Many relationships to model real-world courier operations effectively (e.g., one customer can have multiple courier bookings).
+  
 3.Frontend Form Validation
   Validations implemented at the HTML and UI level to ensure required fields and proper input formats are enforced before submission.
+  
 4.JavaScript-Level Validation
   Additional dynamic validations (e.g., checking email format, number ranges, etc.) handled using JavaScript for better user experience.
+  
 5.Oracle SQL Null Checks
   Database-side validations using SQL constraints to prevent null values and ensure data integrity.
 
