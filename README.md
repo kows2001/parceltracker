@@ -4,15 +4,15 @@
 
 Parcel Tracking Management :
 
-The primary purpose of a courier tracking system is to determine the location  of a target on a near-continuous basis. An ideal tracking system would maintain contact and constantly update the target's location, time it takes to reach.
+The Parcel Tracking Management System is designed to monitor and track the real-time location of shipments. The primary objective is to determine the current status and position of parcels on a near-continuous basis.
 
 # General Information
 
-1.Courier module contains bookings, incomings, out returns, no delivery,  and pickup centers details. 
+1.Manages bookings, incoming shipments, outgoing returns, and undelivered parcels
 
-2.The tracking software provides all information about the package where the customers can even track the exact location of each order they place.
+2.Tracks pickup center locations and operations
 
-4.The excellent combination of real-time information along with increased efficiency leads to quicker and proper delivery schedules.
+3.Allows customers to monitor the exact location of each order
 
 # Project flow
 
@@ -32,31 +32,36 @@ The primary purpose of a courier tracking system is to determine the location  o
                                        -LOGOUT
                                        
       
-# How to use the project
+How to Use the Project
+1.Login
+Start by logging in to the Parcel Tracker platform using your registered email and password.
 
-1.Initially we have to login to parcel tracker site by using your credentials such as email and password.
+2.Customer Profile
+Once logged in, the customer can view and manage their personal details in the Profile section.
 
-2.Customer Profile - After logged into the site the customer can able to see their details in their profile section.
+3.Courier Registration
+Customers can register a new courier for delivery.
+A Reference Number is generated upon registration, which is used for tracking.
 
-3.Courier Register - In the site customer can order the courier and tack the courier by reference number.
+4.Admin Profile
+Admins log in using their credentials.
+They can view the list of registered couriers and update the status of each courier.
 
-3.Admin Profile - After logged into the site admin can view the register list and update courier status.
+5.Courier Tracking
+Customers can track the real-time status of their courier using the Reference Number provided during registration.
+Status updates made by the admin are reflected instantly for the customer.
 
-4.Customer  can track the courier status updated by the admin using reference number while it created at the time of courier register.
-
-# Features
-
-1.DataBase Connectivity.
-
-2.DB Relational Data Handling. One to Many relation.
-
-3.Form validation in frontend level.
-
-4.Form validation in JavaScript level.
-
-5.Form null validation in Oracle DataBase level(SQL).
-
-6.Generating Id automatically
+# Technical Features
+1.Database Connectivity
+  Integrated with Oracle Database for robust data storage and retrieval.
+2.Relational Data Handling
+  Implements One-to-Many relationships to model real-world courier operations effectively (e.g., one customer can have multiple courier bookings).
+3.Frontend Form Validation
+  Validations implemented at the HTML and UI level to ensure required fields and proper input formats are enforced before submission.
+4.JavaScript-Level Validation
+  Additional dynamic validations (e.g., checking email format, number ranges, etc.) handled using JavaScript for better user experience.
+5.Oracle SQL Null Checks
+  Database-side validations using SQL constraints to prevent null values and ensure data integrity.
 
 
 # Technology
